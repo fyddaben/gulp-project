@@ -1,0 +1,17 @@
+{
+  "name": "gulp-pro",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-jade": "latest",
+    "rimraf": "latest",
+    "gulp-coffee":"latest",
+    "gulp-sass":"latest",
+    "gulp-minify-css":"latest",
+    "gulp-changed":"latest",
+    "gulp-uglify":"latest"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}

@@ -1,0 +1,69 @@
+extends ../_common/layout 
+
+block title
+	title
+		| Mi India
+block stylesheet
+	link(rel="stylesheet",href="http://promo.mi.com/webfile/globalweb/in/hd/2014061201/css/base.min.css")
+	link(rel="stylesheet",href="http://work.mi.com/css/140623/index.css")
+block content
+	.india-head 
+		a.india-scroll-forward.J_join#J_show_bar
+		.india-head-main.J_head_main
+			.J_less_num.head-normal.hide
+				h3.india-head-main-hua.J_show_bar
+				.india-head-main-fb.J_fb_login
+				a.india-head-fb-href(href="https://www.facebook.com/pages/Mi-India/1495988390615727",target="_blank",style="text-decoration: underline;")
+					|Facebook
+				.india-head-fb-like
+					<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FMi-India%2F1495988390615727&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=1409348102686738" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+				.india-head-main-loading
+					.india-head-main-loading-bar.J_load_bar
+						.india-head-main-num.J_load_num.xm-animate
+					.india-head-main-num-all
+						|100,000
+			.J_more_num.more-info.hide
+				.more-info-num.J_load_num
+				.more-info-title
+				.more-info-support-btn.J_fb_login
+				.india-head-fb-like
+					<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FMi-India%2F1495988390615727&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=1409348102686738" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+				a.more-info-fb(href="https://www.facebook.com/pages/Mi-India/1495988390615727",target="_blank")
+					|Facebook  
+	script(src="http://promo.mi.com/webfile/globalweb/in/hd/2014061201/js/jquery.js")
+	script(src="http://promo.mi.com/webfile/globalweb/in/hd/2014061201/js/modal.js")
+	script(src="http://promo.mi.com/webfile/globalweb/in/hd/2014061201/js/doT.js")
+
+	script.
+		(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		var shareInfo={
+			name:'With Mi in India',
+			caption:'',
+			description:'Come help show your support for Mi in India. I\' ve pledged my support and you can do your part too! Visit www.mi.com now.',
+			link: 'http://www.mi.com/',
+			picture:'http://global.mifile.cn/webfile/globalimg/in/hd/14061701/india_share.jpg'
+			// picture:'http://img03.mifile.cn/webfile/images/hd/2014061701/india_index.jpg'
+		};
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

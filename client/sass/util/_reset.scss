@@ -1,0 +1,125 @@
+html,body,
+ul,ol,p,h1,h2,h3,h4{
+	margin:0px;
+	padding:0px;
+}
+ul,li {
+list-style:none;
+}
+
+body {
+font-size:12px;
+//font-family: arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+background-color: #fff;
+font-family: Microsoft YaHei,SimHei,Verdana,Arial,sans-serif;
+color: #434a54;
+}
+
+.hide {
+display:none;
+}
+a{
+text-decoration:none;
+color:#ef1035;
+img{
+	border: none;
+}
+}
+a.cu:hover {
+cursor:pointer;
+text-decoration:underline;
+}
+
+a.de:hover {
+cursor:default;
+}
+textarea{
+	outline-style: none;
+	word-wrap: break-word;
+	resize: none;
+}
+.clearfix {
+	*zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+		line-height: 0;
+	}
+	&:after {
+		clear: both;
+	}
+}
+body{
+	font-family:  arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+	font-size:14px;
+	position: relative;
+
+}
+.hide {
+  display: none;
+}
+@mixin border-radius($radius:5px){//默认为5
+	-webkit-border-radius: $radius;
+	 -moz-border-radius: $radius;
+	  -ms-border-radius: $radius;
+	   -o-border-radius: $radius;
+		  border-radius: $radius;
+}
+
+@mixin perspective($pers){
+	-webkit-perspective: $pers;
+	-moz-perspective: $pers;
+	-ms-perspective: $pers;
+	-o-perspective: $pers;
+		perspective: $pers;
+}
+@mixin transition($pers...){
+	-webkit-transition: $pers;
+	-moz-transition: $pers;
+	-ms-transition: $pers;
+	-o-transition: $pers;
+		transition: $pers;
+}
+@mixin transform($pers){
+	-webkit-transform: $pers;
+	-moz-transform: $pers;
+	-ms-transform: $pers;
+	-o-transform: $pers;
+		transform: $pers;
+}
+@mixin backface-visibility($radius){
+	-webkit-backface-visibility:$radius;
+	-moz-backface-visibility: $radius;
+	-ms-backface-visibility: $radius;
+	-o-backface-visibility: $radius;
+		backface-visibility: $radius;
+}
+@mixin box-pack($radius){
+	-webkit-box-pack:$radius;
+	-moz-box-pack: $radius;
+	-ms-box-pack: $radius;
+	-o-box-pack: $radius;
+		box-pack: $radius;
+}
+@mixin box-align($radius){
+	-webkit-box-align:$radius;
+	-moz-box-align: $radius;
+	-ms-box-align: $radius;
+	-o-box-align: $radius;
+		box-align: $radius;
+}
+@mixin box-shadow($radius...){
+	-webkit-box-shadow:$radius;
+	-moz-box-shadow: $radius;
+	-ms-box-shadow: $radius;
+	-o-box-shadow: $radius;
+		box-shadow: $radius;
+}
+@mixin opacity($opacity){
+	opacity: $opacity / 100;
+  	filter: "~alpha(opacity="+$opacity+")";
+}
+
+//换行问题
+//word-wrap:break-word;
