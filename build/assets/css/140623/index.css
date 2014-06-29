@@ -1,0 +1,780 @@
+/* line 2, ../../../../client/sass/util/_reset.scss */
+html, body,
+ul, ol, p, h1, h2, h3, h4 {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 6, ../../../../client/sass/util/_reset.scss */
+ul, li {
+  list-style: none;
+}
+
+/* line 10, ../../../../client/sass/util/_reset.scss */
+body {
+  font-size: 12px;
+  background-color: #fff;
+  font-family: Microsoft YaHei,SimHei,Verdana,Arial,sans-serif;
+  color: #434a54;
+}
+
+/* line 18, ../../../../client/sass/util/_reset.scss */
+.hide {
+  display: none;
+}
+
+/* line 21, ../../../../client/sass/util/_reset.scss */
+a {
+  text-decoration: none;
+  color: #ef1035;
+}
+/* line 24, ../../../../client/sass/util/_reset.scss */
+a img {
+  border: none;
+}
+
+/* line 28, ../../../../client/sass/util/_reset.scss */
+a.cu:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 33, ../../../../client/sass/util/_reset.scss */
+a.de:hover {
+  cursor: default;
+}
+
+/* line 36, ../../../../client/sass/util/_reset.scss */
+textarea {
+  outline-style: none;
+  word-wrap: break-word;
+  resize: none;
+}
+
+/* line 41, ../../../../client/sass/util/_reset.scss */
+.clearfix {
+  *zoom: 1;
+}
+/* line 44, ../../../../client/sass/util/_reset.scss */
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 49, ../../../../client/sass/util/_reset.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 53, ../../../../client/sass/util/_reset.scss */
+body {
+  font-family: arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+  font-size: 14px;
+  position: relative;
+}
+
+/* line 59, ../../../../client/sass/util/_reset.scss */
+.hide {
+  display: none;
+}
+
+@-webkit-keyframes xm-animate-swing {
+  /* line 5, ../../../../client/sass/140623/index.scss */
+  20% {
+    -webkit-transform: rotate(15deg);
+  }
+
+  /* line 9, ../../../../client/sass/140623/index.scss */
+  40% {
+    -webkit-transform: rotate(-10deg);
+  }
+
+  /* line 13, ../../../../client/sass/140623/index.scss */
+  60% {
+    -webkit-transform: rotate(5deg);
+  }
+
+  /* line 17, ../../../../client/sass/140623/index.scss */
+  80% {
+    -webkit-transform: rotate(-5deg);
+  }
+
+  /* line 21, ../../../../client/sass/140623/index.scss */
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@keyframes xm-animate-swing {
+  /* line 26, ../../../../client/sass/140623/index.scss */
+  20% {
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  /* line 31, ../../../../client/sass/140623/index.scss */
+  40% {
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  /* line 36, ../../../../client/sass/140623/index.scss */
+  60% {
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  /* line 41, ../../../../client/sass/140623/index.scss */
+  80% {
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  /* line 46, ../../../../client/sass/140623/index.scss */
+  100% {
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+/* line 51, ../../../../client/sass/140623/index.scss */
+.xm-animate {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* line 58, ../../../../client/sass/140623/index.scss */
+.xm-animate-swing {
+  -webkit-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+  -webkit-animation-name: xm-animate-swing;
+  animation-name: xm-animate-swing;
+}
+
+/* line 67, ../../../../client/sass/140623/index.scss */
+body {
+  background-color: #edeef2;
+}
+
+/* line 70, ../../../../client/sass/140623/index.scss */
+.india-head {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-21.jpg?140619");
+  background-color: #edeef2;
+}
+/* line 76, ../../../../client/sass/140623/index.scss */
+.india-head .india-scroll-forward {
+  position: fixed;
+  bottom: 35px;
+  right: 50px;
+  cursor: pointer;
+  width: 27px;
+  z-index: 250;
+  height: 85px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/3.fw.png");
+}
+/* line 88, ../../../../client/sass/140623/index.scss */
+.india-head .india-scroll-forward.img1 {
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/1.fw.png");
+}
+/* line 91, ../../../../client/sass/140623/index.scss */
+.india-head .india-scroll-forward.img2 {
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/2.fw.png");
+}
+/* line 94, ../../../../client/sass/140623/index.scss */
+.india-head .india-scroll-forward.img3 {
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/3.fw.png");
+}
+/* line 97, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main {
+  width: 1240px;
+  height: 1160px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+/* line 106, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main .head-normal .india-head-main-title {
+  margin-top: 160px;
+  font-size: 38px;
+  color: #fff;
+  color: #fff;
+  line-height: 40px;
+  font-weight: normal;
+  text-align: center;
+}
+/* line 115, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main .head-normal .india-head-main-hua {
+  margin-top: 890px;
+  height: 70px;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-15.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* line 123, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main .head-normal .india-head-main-info {
+  margin-top: 18px;
+  font-size: 22px;
+  color: #b1bad5;
+  line-height: 30px;
+  text-align: center;
+}
+/* line 130, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main .head-normal .india-head-main-fb {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 250px;
+  height: 55px;
+  line-height: 55px;
+  background-repeat: no-repeat;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-3.png");
+  cursor: pointer;
+  position: relative;
+}
+/* line 140, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main .head-normal .india-head-main-fb .india-head-fb-href {
+  position: absolute;
+  top: 3px;
+  right: -85px;
+  color: #fff;
+  font-size: 18px;
+}
+/* line 148, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main .head-normal .india-head-fb-like {
+  position: absolute;
+  top: 996px;
+  right: 180px;
+}
+/* line 154, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main .head-normal .india-head-fb-href {
+  position: absolute;
+  top: 1023px;
+  right: 413px;
+  color: #fff;
+}
+/* line 161, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main .head-normal .india-head-main-loading {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 1030px;
+  height: 30px;
+  position: relative;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-7.png");
+  background-repeat: no-repeat;
+  background-position: -3px -9px;
+  padding-left: 2px;
+}
+/* line 172, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main .head-normal .india-head-main-loading .india-head-main-loading-bar {
+  height: 18px;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-1.png");
+  background-repeat: no-repeat;
+  background-position: -4px -2px;
+  border-radius: 10px;
+  width: 0px;
+  position: relative;
+  -webkit-transition: width 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -moz-transition: width 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -ms-transition: width 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: width 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: width 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+/* line 182, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main .head-normal .india-head-main-loading .india-head-main-loading-bar .india-head-main-num {
+  position: absolute;
+  top: -37px;
+  right: -45px;
+  width: 90px;
+  height: 40px;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-4.png");
+  background-repeat: no-repeat;
+  color: #3f4761;
+  font-size: 18px;
+  line-height: 34px;
+  text-align: center;
+}
+/* line 196, ../../../../client/sass/140623/index.scss */
+.india-head .india-head-main .head-normal .india-head-main-loading .india-head-main-num-all {
+  position: absolute;
+  top: 18px;
+  right: -36px;
+  width: 90px;
+  height: 40px;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-5.png");
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+}
+/* line 213, ../../../../client/sass/140623/index.scss */
+.india-head .head-more {
+  height: 1075px;
+}
+/* line 216, ../../../../client/sass/140623/index.scss */
+.india-head .head-more .more-info {
+  display: block;
+  position: relative;
+  margin-top: 850px;
+  height: 230px;
+}
+/* line 221, ../../../../client/sass/140623/index.scss */
+.india-head .head-more .more-info .more-info-num {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 230px;
+  width: 580px;
+  text-align: right;
+  color: #fff;
+  font-size: 135px;
+  line-height: 230px;
+}
+/* line 232, ../../../../client/sass/140623/index.scss */
+.india-head .head-more .more-info .more-info-title {
+  height: 40px;
+  width: 495px;
+  background-repeat: no-repeat;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-19.png");
+  position: absolute;
+  top: 45px;
+  right: 130px;
+}
+/* line 241, ../../../../client/sass/140623/index.scss */
+.india-head .head-more .more-info .more-info-support-btn {
+  width: 250px;
+  height: 55px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-3.png");
+  top: 110px;
+  right: 370px;
+  cursor: pointer;
+}
+/* line 251, ../../../../client/sass/140623/index.scss */
+.india-head .head-more .more-info .more-info-fb {
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  top: 140px;
+  right: 295px;
+  text-decoration: underline;
+}
+/* line 259, ../../../../client/sass/140623/index.scss */
+.india-head .head-more .more-info .india-head-fb-like {
+  position: absolute;
+  top: 115px;
+  right: 69px;
+}
+
+/* line 269, ../../../../client/sass/140623/index.scss */
+.india-head-body {
+  padding-top: 20px;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  background-color: #edeef2;
+}
+/* line 278, ../../../../client/sass/140623/index.scss */
+.india-head-body .title {
+  font-size: 36px;
+  color: #46484f;
+  line-height: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-22.jpg");
+}
+/* line 289, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list {
+  width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  background-image: url(http://s1.mi.com/zt/2013/loading.gif);
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+/* line 296, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li {
+  float: left;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -ms-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform-origin: center center;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+/* line 302, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+}
+/* line 317, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li:hover {
+  z-index: 20;
+  -webkit-transform: scale(2);
+}
+/* line 321, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li .front {
+  position: absolute;
+  left: 0px;
+}
+/* line 328, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li .end {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  left: -50px;
+}
+/* line 336, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li.first {
+  overflow: initial;
+  cursor: pointer;
+}
+/* line 339, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li.first:hover {
+  z-index: 0;
+  -webkit-transform: scale(1);
+}
+/* line 344, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li.first .front {
+  position: absolute;
+  opacity: 1;
+  filter: "~alpha(opacity=100)";
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: center center;
+  left: 0px;
+}
+/* line 355, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li.first .end {
+  position: absolute;
+  left: 0px;
+  opacity: 0;
+  filter: "~alpha(opacity=0)";
+  -webkit-transform-origin: center center;
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+}
+/* line 370, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li.first.changeImg .front {
+  opacity: 0;
+  filter: "~alpha(opacity=0)";
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  left: 0px;
+}
+/* line 379, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li.first.changeImg .end {
+  opacity: 1;
+  filter: "~alpha(opacity=100)";
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  left: 0px;
+}
+/* line 390, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li.changeImg img {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+/* line 393, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li.changeImg .front {
+  left: 50px;
+}
+/* line 397, ../../../../client/sass/140623/index.scss */
+.india-head-body .img-list li.changeImg .end {
+  left: 0px;
+}
+
+/* line 404, ../../../../client/sass/140623/index.scss */
+.india-head-footer {
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+  font-size: 16px;
+  color: #46484f;
+  line-height: 30px;
+  padding-bottom: 50px;
+  width: 600px;
+  margin-top: 20px;
+  background-color: #edeef2;
+}
+/* line 417, ../../../../client/sass/140623/index.scss */
+.india-head-footer .selector {
+  position: absolute;
+  right: 15px;
+  line-height: 28px;
+  top: 0px;
+  border: 1px solid #dfdfdf;
+  background: #fff;
+  color: #333;
+  text-align: left;
+}
+/* line 426, ../../../../client/sass/140623/index.scss */
+.india-head-footer .selector span {
+  display: block;
+  width: 154px;
+  font-size: 12px;
+  padding: 0 12px;
+}
+/* line 431, ../../../../client/sass/140623/index.scss */
+.india-head-footer .selector span i {
+  float: right;
+  width: 0;
+  height: 0;
+  margin-top: 13px;
+  border-width: 5px 5px 0 5px;
+  border-style: solid dashed dashed dashed;
+  border-color: #8c8c8c transparent transparent transparent;
+}
+/* line 441, ../../../../client/sass/140623/index.scss */
+.india-head-footer .selector div {
+  display: none;
+  position: absolute;
+  right: -1px;
+  bottom: 0;
+  width: 100%;
+  border: 1px solid #dfdfdf;
+  border-bottom: none;
+  z-index: 200;
+}
+/* line 450, ../../../../client/sass/140623/index.scss */
+.india-head-footer .selector div a {
+  display: block;
+  padding: 0 12px;
+  background: #fff;
+  color: #333;
+  font-size: 12px;
+}
+/* line 456, ../../../../client/sass/140623/index.scss */
+.india-head-footer .selector div a:hover {
+  color: #ee330a;
+}
+/* line 462, ../../../../client/sass/140623/index.scss */
+.india-head-footer .selector:hover div {
+  display: block;
+}
+
+/* line 468, ../../../../client/sass/140623/index.scss */
+.modal-body {
+  padding: 0px;
+  text-align: center;
+}
+
+/* line 472, ../../../../client/sass/140623/index.scss */
+.india-modal {
+  width: 384px;
+  height: 400px;
+  margin-left: -192px;
+  border-radius: 10px;
+}
+/* line 477, ../../../../client/sass/140623/index.scss */
+.india-modal .close {
+  background: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-8.png");
+  top: -25px;
+}
+/* line 483, ../../../../client/sass/140623/index.scss */
+.india-modal .close:hover {
+  background: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-8.png");
+}
+/* line 491, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-header {
+  height: 0px;
+  border-bottom: none;
+}
+/* line 494, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-header .close {
+  right: -60px;
+}
+/* line 498, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-body {
+  overflow: hidden;
+}
+/* line 500, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-body .head-img {
+  margin-top: 20px;
+  text-align: center;
+}
+/* line 503, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-body .head-img img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+/* line 509, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-body .head-name {
+  font-size: 16px;
+  line-height: 20px;
+  color: #444;
+  text-align: center;
+  margin-top: 10px;
+}
+/* line 516, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-body .thx-info {
+  margin-top: 22px;
+  font-size: 22px;
+  color: #ff4a00;
+  line-height: 30px;
+  font-style: italic;
+}
+/* line 523, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-body .wel-info {
+  margin-top: 17px;
+  font-size: 16px;
+  color: #393f57;
+  line-height: 20px;
+  text-align: center;
+}
+/* line 529, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-body .wel-info i {
+  color: #ff4a00;
+  font-style: normal;
+}
+/* line 534, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-body .body-btn {
+  height: 40px;
+  margin-top: 15px;
+  position: relative;
+}
+/* line 538, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-body .body-btn .btn-close {
+  position: absolute;
+  top: 0px;
+  left: 40px;
+  display: block;
+  cursor: pointer;
+  z-index: 222;
+}
+/* line 547, ../../../../client/sass/140623/index.scss */
+.india-modal .modal-body .body-btn .fb-share-btn {
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  display: block;
+  cursor: pointer;
+  z-index: 222;
+}
+
+/* line 560, ../../../../client/sass/140623/index.scss */
+.india-modal-loading {
+  width: 300px;
+  height: 100px;
+  margin-left: -150px;
+  margin-top: -60px;
+  border-radius: 10px;
+}
+/* line 566, ../../../../client/sass/140623/index.scss */
+.india-modal-loading .modal-body {
+  padding-top: 20px;
+}
+/* line 568, ../../../../client/sass/140623/index.scss */
+.india-modal-loading .modal-body .font {
+  margin-top: 20px;
+}
+
+@media screen and (max-height: 900px) {
+  /* line 574, ../../../../client/sass/140623/index.scss */
+  .india-head {
+    background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-23.jpg?140619");
+  }
+  /* line 576, ../../../../client/sass/140623/index.scss */
+  .india-head .india-head-main {
+    height: 763px;
+  }
+  /* line 578, ../../../../client/sass/140623/index.scss */
+  .india-head .india-head-main .india-head-fb-href {
+    position: absolute;
+    top: 710px;
+    right: 413px;
+    color: #fff;
+  }
+  /* line 585, ../../../../client/sass/140623/index.scss */
+  .india-head .india-head-main .head-normal .india-head-main-title {
+    margin-top: 100px;
+    font-size: 27px;
+    line-height: 30px;
+  }
+  /* line 590, ../../../../client/sass/140623/index.scss */
+  .india-head .india-head-main .head-normal .india-head-main-hua {
+    margin-top: 515px;
+    height: 85px;
+    background-image: url("http://global.mifile.cn/webfile/globalimg/in/hd/14061701/i-16.png");
+    background-position: center center;
+  }
+  /* line 597, ../../../../client/sass/140623/index.scss */
+  .india-head .india-head-main .head-normal .india-head-main-info {
+    font-size: 15px;
+    color: #b1bad5;
+    line-height: 20px;
+    margin-top: 5px;
+  }
+  /* line 603, ../../../../client/sass/140623/index.scss */
+  .india-head .india-head-main .head-normal .india-head-main-fb {
+    margin-top: 10px;
+  }
+  /* line 606, ../../../../client/sass/140623/index.scss */
+  .india-head .india-head-main .head-normal .india-head-fb-like {
+    position: absolute;
+    top: 617px;
+    right: 180px;
+  }
+  /* line 612, ../../../../client/sass/140623/index.scss */
+  .india-head .india-head-main .head-normal .india-head-fb-href {
+    position: absolute;
+    top: 641px;
+    right: 413px;
+    color: #fff;
+  }
+  /* line 618, ../../../../client/sass/140623/index.scss */
+  .india-head .india-head-main .head-normal .india-head-main-loading {
+    margin-top: 20px;
+  }
+  /* line 622, ../../../../client/sass/140623/index.scss */
+  .india-head .india-head-main .more-info {
+    margin-top: 515px;
+  }
+}

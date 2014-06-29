@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>animate tool</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="http://www.mi.com/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://www.mi.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://ben.mi.com/assets/temp/140624/ani.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="left-part">
+        <div class="left-part-leftArea">
+          <div class="border-num J_border"></div>
+          <div class="addBallBtn J_addBtn">+</div>
+          <div class="playStart J_play">PLAY</div>
+        </div>
+        <div class="left-part-rightArea">
+          <div class="input-frame J_inputFrm"></div>
+          <div class="resume J_resume">RESUME</div>
+          <div class="log J_log">LOG</div>
+          <input value="1000" class="input-dur J_duration">
+          <input value="linear" class="input-fun J_fun">
+          <input value="infinite" class="input-repeat J_repeat">
+        </div>
+      </div>
+      <div class="right-part">
+        <div class="circle-obj J_roundBall"></div>
+      </div>
+    </div>
+    <script src="http://ben.mi.com/js/util/jquery.js"></script>
+    <script src="http://ben.mi.com/js/util/jquery.keyframes.min.js"></script>
+    <script src="http://ben.mi.com/js/util/doT.js"></script>
+    <script id="circle-tmpl" type="text/template"><div data-input="J_input_{{=it.cirId}}" class="circle J_circle clickCircle" style="background-color:{{=it.color}};">0</div></script>
+    <script id="input-tmpl" type="text/template"><input class="input-content J_input_{{=it.cirId}}" ></script>
+    <script src="http://ben.mi.com/js/140624/ani.js"></script>
+  </body>
+</html>

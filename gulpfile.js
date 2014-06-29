@@ -14,11 +14,30 @@ var minicss = require('gulp-minify-css');
 
 var rimraf = require('rimraf');
 
+var compass = require('gulp-compass');
+
+
 var paths = {
   coffee: ['./client/coffee/**/*.coffee'],
   sass: ['./client/sass/1*/*.scss'],
   jade:['./client/templates/1*/*.jade']
 };
+
+gulp.task('compass', function() {
+  gulp.src(paths.sass)
+  .pipe(compass({
+    css: './build/assets/css',
+    sass: './client/sass'
+  }))
+  .on('error', function(err) {
+    console.log(err)
+  })
+  .pipe(minicss())
+  .pipe(gulp.dest('./build/assets/temp'));
+});
+
+
+
 gulp.task('sass', function() {
   var l= sass({
      onError: function(err) {
@@ -58,10 +77,10 @@ gulp.task('jade', function() {
 });
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.sass, ['compass']);
   gulp.watch(paths.coffee, ['coffee']);
   gulp.watch(paths.jade, ['jade']);
 });
 
 
-gulp.task('default', ['watch','jade','coffee','sass']);
+gulp.task('default', ['watch','jade','coffee','compass']);
