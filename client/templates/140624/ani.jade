@@ -24,20 +24,46 @@ block content
 
 				.log.J_log
 					|LOG
+				.group.J_group
+					|GROUP
 				input.input-dur.J_duration(value="1000")
 				input.input-fun.J_fun(value="linear")
 				input.input-repeat.J_repeat(value="infinite")
 				
 		.right-part
 			.circle-obj.J_roundBall
-
+	.modal.hide#J_input_code.css-modal
+		.modal-header
+			a.close(data-dismiss="modal")
+				| X
+			h3
+				|WRITE YOUR CSS INFO
+		.modal-body
+			textarea.input-textarea.J_code_content
+				|10%{width:10px;}
+				|20%{width:20px;}
+		.modal-footer
+			.modal-confirm.J_code_sure
+				| SURE
+ 
 	script(src="http://ben.mi.com/js/util/jquery.js")
 	script(src="http://ben.mi.com/js/util/jquery.keyframes.min.js")
 	script(src="http://ben.mi.com/js/util/doT.js")
+	script(src="http://ben.mi.com/js/util/modal.js")
 	script(id="circle-tmpl",type="text/template")
 		<div data-input="J_input_{{=it.cirId}}" data-exit="J_exit_{{=it.cirId}}" class="circle J_circle clickCircle J_circle_{{=it.cirId}}" style="background-color:{{=it.color}};">0</div>
 	script(id="input-tmpl",type="text/template")
 		<input class="input-content J_input_{{=it.cirId}}" >
 		<div class="exit J_exit_{{=it.cirId}} J_exitBtn" data-id="{{=it.cirId}}">x</div>
+	script(id="circle-tmpl-b",type="text/template")
+		{{for(var i in it){ var obj=it[i];}}
+		<div data-input="J_input_{{=obj.cirId}}" data-exit="J_exit_{{=obj.cirId}}" class="circle J_circle  J_circle_{{=obj.cirId}}" style="background-color:{{=obj.color}};top:{{=obj.top}}px;">{{=obj.num}}</div>
+		{{ } }}
+	script(id="input-tmpl-b",type="text/template")
+		{{for(var i in it){ var obj=it[i];}}
+		<input class="input-content J_input_{{=obj.cirId}}" value="{{=obj.val}}" style="top:{{=obj.top}}px;">
+		<div class="exit J_exit_{{=obj.cirId}} J_exitBtn" data-id="{{=obj.cirId}}" style="top:{{=obj.top}}px;">x</div>
+		{{ } }}
 	script(src="http://ben.mi.com/js/140624/ani.js")
+
 	

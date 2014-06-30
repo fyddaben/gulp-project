@@ -1,1 +1,253 @@
-(function(){var t;t={init:function(){this.config(),this.runAll()},config:function(){this.BORDERHEI=parseInt($(".J_border").css("height"))-30,this.LOGCSS="",this.COUNT=0},runAll:function(){this.addOneBall(),this.moveCircle(),this.clickEvent()},moveCircle:function(){var t;return t=this,$(".J_border").on("mousedown",".J_circle",function(){var n,e,r;return r=$(this),e=$(this)[0].offsetTop,n=event.pageY,$(this).addClass("clickCircle"),$(document).on("mousemove",function(i){var a,o;return o=i.pageY-n,a=e+o,0>a?void 0:a>t.BORDERHEI?(r.css({top:t.BORDERHEI+"px"}),void t.changeInputHei(t.BORDERHEI,r)):(r.css({top:a+"px"}),t.changeInputHei(a,r),t.calPer(a,r),void 0)}),$(document).on("mouseup",function(){return $(this).unbind("mousemove"),r.removeClass("clickCircle")})})},changeInputHei:function(t,n){var e,r;return e=n.attr("data-input"),r=n.attr("data-exit"),$("."+e).css("top",t),$("."+r).css("top",t)},calPer:function(t,n){var e;return e=parseInt(t/this.BORDERHEI*100),e>99?void 0:n.html(e)},addOneBall:function(){var t,n,e,r;t=this.COUNT++,n={cirId:t,color:this.getRandomCol()},e=this.tmpl("circle-tmpl",n),r=this.tmpl("input-tmpl",n),$(".J_border").find(".J_circle").removeClass("clickCircle"),$(".J_border").append(e),$(".J_inputFrm").append(r)},tmpl:function(t,n){var e,r,i;return r=document.getElementById(t),i=r.innerHTML,(e=doT.template(i))(n)},getRandomCol:function(){return"#"+("00000"+(16777215*Math.random()+.5>>0).toString(16)).slice(-6)},clickEvent:function(){var t;return t=this,$(".J_addBtn").click(function(){return t.addOneBall()}),$(".J_play").click(function(){var n,e,r,i,a;return i=t.getDataByPlay(),t.demo_animate(i),e=parseInt($(".J_duration").val()),r=$(".J_fun").val(),a=$(".J_repeat").val(),n={name:"animate",duration:e,timingFunction:r,delay:0,repeat:a,direction:"normal",fillMode:"forwards",complete:function(){}},$(".J_roundBall").playKeyframe(n)}),$(".J_resume").click(function(){return $(".J_roundBall").removeClass("boostKeyframe"),$(".J_roundBall").removeAttr("style")}),$(".J_log").click(function(){return alert("请打开控制台"),console.log(t.LOGCSS)}),$(document).on("click",".J_exitBtn",function(){var t,n,e;return n=$(this).attr("data-id"),e="J_input_"+n,t="J_circle_"+n,$("."+e).remove(),$("."+t).remove(),$(this).remove()})},getDataByPlay:function(){var t,n;return t=[],n=this,$(".J_circle").each(function(){var e,r,i,a,o,l;return o=$(this).html(),r=$(this).attr("data-input"),i=$("."+r),l=i.val(),a={},a.per=o,""===l?(i.addClass("blood"),!1):(e=n.genCssArr(l),a.attr=e,i.removeClass("blood"),t.push(a))}),t},genCssArr:function(t){var n,e,r,i,a;n=[],t.indexOf(!0)?n=t.split(";"):n.push(t),e=[];for(r in n)i=n[r],""!==i&&i.indexOf(!0)&&(a={key:i.split(":")[0],val:i.split(":")[1]},e.push(a));return e},demo_animate:function(t){var n,e,r,i,a,o,l,c,u,s,d;n=[],u={name:"animate"},d=this,d.LOGCSS="";for(a in t){e=t[a],l=e.per+"%",c={},i="",s=e.attr;for(o in s)r=s[o],c[r.key]=r.val,i=i+r.key+":"+r.val+";";d.LOGCSS=d.LOGCSS+l+" {"+i+"} ",u[l]=c}return d.LOGCSS="{"+d.LOGCSS+"}",n.push(u),$.keyframe.define(n)}},t.init()}).call(this);
+(function() {
+  var Controll;
+
+  Controll = {
+    init: function() {
+      this.config();
+      this.runAll();
+    },
+    config: function() {
+      this.BORDERHEI = parseInt($(".J_border").css("height")) - 30;
+      this.LOGCSS = "";
+      this.COUNT = 0;
+    },
+    runAll: function() {
+      this.addOneBall();
+      this.moveCircle();
+      this.clickEvent();
+    },
+    moveCircle: function() {
+      var _t;
+      _t = this;
+      return $(".J_border").on("mousedown", ".J_circle", function(e) {
+        var mouse_y, offset_y, _thisBall;
+        _thisBall = $(this);
+        offset_y = $(this)[0].offsetTop;
+        mouse_y = event.pageY;
+        $(this).addClass("clickCircle");
+        $(document).on("mousemove", function(ev) {
+          var now_y, _y;
+          _y = ev.pageY - mouse_y;
+          now_y = offset_y + _y;
+          if (now_y < 0) {
+            return;
+          }
+          if (now_y > _t.BORDERHEI) {
+            _thisBall.css({
+              top: _t.BORDERHEI + "px"
+            });
+            _t.changeInputHei(_t.BORDERHEI, _thisBall);
+            return;
+          } else {
+            _thisBall.css({
+              top: now_y + "px"
+            });
+            _t.changeInputHei(now_y, _thisBall);
+            _t.calPer(now_y, _thisBall);
+          }
+        });
+        return $(document).on("mouseup", function() {
+          $(this).unbind("mousemove");
+          return _thisBall.removeClass("clickCircle");
+        });
+      });
+    },
+    changeInputHei: function(top, ball) {
+      var classAtr, exitAtr;
+      classAtr = ball.attr("data-input");
+      exitAtr = ball.attr("data-exit");
+      $("." + classAtr).css("top", top);
+      return $("." + exitAtr).css("top", top);
+    },
+    calPer: function(top, ball) {
+      var per;
+      per = parseInt(top / this.BORDERHEI * 100);
+      if (per > 100) {
+        return;
+      }
+      return ball.html(per);
+    },
+    addOneBall: function() {
+      var cirId, obj, str, str_input;
+      this.COUNT = this.COUNT + 1;
+      cirId = this.COUNT;
+      obj = {
+        cirId: cirId,
+        color: this.getRandomCol()
+      };
+      str = this.tmpl("circle-tmpl", obj);
+      str_input = this.tmpl("input-tmpl", obj);
+      $(".J_border").find(".J_circle").removeClass("clickCircle");
+      $(".J_border").append(str);
+      $(".J_inputFrm").append(str_input);
+    },
+    tmpl: function(name, obj) {
+      var doTtmpl, tmpl, tmplHtml;
+      tmpl = document.getElementById(name);
+      tmplHtml = tmpl.innerHTML;
+      doTtmpl = doT.template(tmplHtml);
+      return doTtmpl(obj);
+    },
+    getRandomCol: function() {
+      return "#" + ("00000" + ((Math.random() * 16777215 + 0.5) >> 0).toString(16)).slice(-6);
+    },
+    clickEvent: function() {
+      var _t;
+      _t = this;
+      $(".J_addBtn").click(function() {
+        return _t.addOneBall();
+      });
+      $(".J_code_sure").click(function() {
+        var val;
+        val = $(".J_code_content").val();
+        if (val === "") {
+          return alert("please input content");
+        } else {
+          _t.execpCss(val);
+          return $("#J_input_code").modal("hide");
+        }
+      });
+      $(".J_play").click(function() {
+        var attr, duration, fun, perarr, repeatTime;
+        perarr = _t.getDataByPlay();
+        _t.demo_animate(perarr);
+        duration = parseInt($(".J_duration").val());
+        fun = $(".J_fun").val();
+        repeatTime = $(".J_repeat").val();
+        attr = {
+          name: 'animate',
+          duration: duration,
+          timingFunction: fun,
+          delay: 0,
+          repeat: repeatTime,
+          direction: 'normal',
+          fillMode: 'forwards',
+          complete: function() {}
+        };
+        return $(".J_roundBall").playKeyframe(attr);
+      });
+      $(".J_resume").click(function() {
+        $(".J_roundBall").removeClass("boostKeyframe");
+        return $(".J_roundBall").removeAttr("style");
+      });
+      $(".J_log").click(function() {
+        alert("please open chrome dev tool=> console");
+        return console.log(_t.LOGCSS);
+      });
+      $(document).on("click", ".J_exitBtn", function() {
+        var cirStr, id, inputStr;
+        id = $(this).attr("data-id");
+        inputStr = "J_input_" + id;
+        cirStr = "J_circle_" + id;
+        $("." + inputStr).remove();
+        $("." + cirStr).remove();
+        return $(this).remove();
+      });
+      return $(".J_group").click(function() {
+        return $("#J_input_code").modal("show");
+      });
+    },
+    getDataByPlay: function() {
+      var perarr, _t;
+      perarr = [];
+      _t = this;
+      $(".J_circle").each(function() {
+        var arr_b, classIn, classObj, obj, per, val;
+        per = $(this).html();
+        classIn = $(this).attr("data-input");
+        classObj = $("." + classIn);
+        val = classObj.val();
+        obj = {};
+        obj.per = per;
+        if (val === "") {
+          classObj.addClass("blood");
+          return false;
+        } else {
+          arr_b = _t.genCssArr(val);
+          obj.attr = arr_b;
+          classObj.removeClass("blood");
+        }
+        return perarr.push(obj);
+      });
+      return perarr;
+    },
+    genCssArr: function(val) {
+      var arr_a, arr_b, index, obj, unitObj;
+      arr_a = [];
+      if (val.indexOf(";" !== -1)) {
+        arr_a = val.split(";");
+      } else {
+        arr_a.push(val);
+      }
+      arr_b = [];
+      for (index in arr_a) {
+        obj = arr_a[index];
+        if (obj === "") {
+          continue;
+        } else {
+          if (obj.indexOf(":" !== -1)) {
+            unitObj = {
+              key: obj.split(":")[0],
+              val: obj.split(":")[1]
+            };
+            arr_b.push(unitObj);
+          }
+        }
+      }
+      return arr_b;
+    },
+    demo_animate: function(obj) {
+      var attr, con, con_b, css_str, index, index_b, per, perObj, unitObj, _ref, _t;
+      attr = [];
+      unitObj = {
+        name: 'animate'
+      };
+      _t = this;
+      _t.LOGCSS = "";
+      for (index in obj) {
+        con = obj[index];
+        per = con.per + "%";
+        perObj = {};
+        css_str = "";
+        _ref = con.attr;
+        for (index_b in _ref) {
+          con_b = _ref[index_b];
+          perObj[con_b.key] = con_b.val;
+          css_str = css_str + con_b.key + ":" + con_b.val + ";";
+        }
+        _t.LOGCSS = _t.LOGCSS + per + " " + "{" + css_str + "}" + " ";
+        unitObj[per] = perObj;
+      }
+      _t.LOGCSS = "{" + _t.LOGCSS + "}";
+      attr.push(unitObj);
+      return $.keyframe.define(attr);
+    },
+    execpCss: function(val) {
+      var arr_a, arr_b, data, index, num, obj, per, str, str_con, _t;
+      arr_a = val.match(/\w+[%].*?[{].*?[}]/gim);
+      arr_b = [];
+      _t = this;
+      for (index in arr_a) {
+        obj = arr_a[index];
+        data = {};
+        per = obj.match(/\d+[%]/gim)[0];
+        str = obj.match(/{(.*?)}/gim)[0];
+        data.cirId = parseInt(index);
+        _t.COUNT = parseInt(index);
+        num = parseInt(per.match(/\d+[^%]/gim)[0]);
+        data.num = num;
+        data.val = str.match(/[^{}]+/gim)[0];
+        data.top = num / 100 * _t.BORDERHEI;
+        data.color = _t.getRandomCol();
+        arr_b.push(data);
+      }
+      str = this.tmpl("circle-tmpl-b", arr_b);
+      str_con = this.tmpl("input-tmpl-b", arr_b);
+      $(".J_inputFrm").html(str_con);
+      return $(".J_border").html(str);
+    }
+  };
+
+  Controll.init();
+
+}).call(this);

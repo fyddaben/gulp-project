@@ -60,7 +60,7 @@ gulp.task('coffee', function() {
   return gulp.src(paths.coffee)
     .pipe(changed('./build/js'))
     .pipe(l)
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('./build/js'));
 });
 

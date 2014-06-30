@@ -1,1 +1,417 @@
-(function(){var t;t={config:function(){return this.SERVERURL=global.serverurl,this.TARGET=1e5,this.LOADWIDTH=1024,this.LOOPINDEX=1,this.HEADARR=[],this.HURRYNUM=0,this.ISNEW=!1,this.INDEXFLAG=0,this.ISLOADOVER=!1,this.ISCLICKLOGIN=!1,this.ISLOGIN=!1},init:function(){return this.config(),this.runAll()},runAll:function(){return this.initfb(),this.otherEvent()},jsonp:function(t,n,e){return $.ajax({url:t,dataType:"jsonp",data:n,jsonp:"jsonpcallback",success:e})},login:function(){var t,n,e;return e=this,t=global.locationUrl+"?check=true",n="https://www.facebook.com/dialog/oauth?client_id="+global.appId+"&redirect_uri="+t,location.href=n},updateModal:function(t){var n,e,i,r;return r=this,i=this.SERVERURL+"cheer/addcheer",e={user_id:t.userid,user_pic:t.img,access_token:t.token},n=function(n){var e;return"300"===n.code||"200"===n.code?(e=n.index,$(".J_fb_info").html(e),$(".J_fb_username").html(t.username),$(".J_fb_userHead").attr("src",t.img),r.ISCLICKLOGIN&&($("#J_india_loading").modal("hide"),$("#J_india_modal").modal({show:!0,backdrop:"static"})),r.ISLOADOVER=!0,r.ISNEW="200"===n.code?!0:!1):($("#J_india_loading").modal("hide"),r.ISNEW=!1,alert(n.info))},this.jsonp(i,e,n)},getHeadImgbyFb:function(t){var n,e,i,r,o,a;return a=this,e="https://graph.facebook.com/v2.0/me/picture?redirect=false&width=200&height=200&method=GET&format=json&suppress_http_code=1&access_token="+t,i="https://graph.facebook.com/v2.0/me?method=GET&format=json&suppress_http_code=1&access_token="+t,r="",o="",n=function(){return $.get(e,function(n){var e;return e={username:o,img:n.data.url,userid:r,token:t},a.updateModal(e)})},$.get(i,function(t){return r=t.id,o=t.name,n()})},checkLogin:function(){var t,n;return n=this,t=n.RESPONSE,n.ISLOGIN?n.getHeadImgbyFb(t.authResponse.accessToken):n.login(t)},shareFb:function(){return FB.ui({method:"feed",name:shareInfo.name,caption:shareInfo.caption,description:shareInfo.description,link:shareInfo.link,picture:shareInfo.picture})},clickEvent:function(){var t,n,e;return e=this,$("body").on("click",".J_fb_login",function(){return $("#J_india_loading").modal({show:!0,backdrop:"static"}),e.ISCLICKLOGIN=!0,e.ISLOADOVER?e.ISLOGIN?($("#J_india_modal").on("shown.bs.modal",function(){return $("#J_india_loading").modal("hide")}),$("#J_india_modal").modal({show:!0,backdrop:"static"}).trigger("shown")):e.login():void 0}),$(".J_fb_share").click(function(){return e.shareFb()}),$(".J_india_modal_close").click(function(){var t,n;return t=$(".J_load_num").attr("data-num"),$("#J_india_modal").modal("hide"),t>e.HURRYNUM&&e.changeLoading(t),e.ISNEW?(n=$(".J_fb_userHead").attr("src"),e.updateImg(0,n)):void 0}),n=0,t=function(){var t;return n++,1===n?(t=$(".J_join").attr("href").substring(1),e.pageScrollToSpot($("."+t)),$(".J_join").fadeOut(200),e.getHeadImgbyDb(1)):void 0},$(".J_join").click(function(){return t()}),document.onmousewheel=t,document.addEventListener("DOMMouseScroll",t,!1)},changeLoading:function(t){var n,e,i,r;return t=parseInt(t),r=this,r.judegeNum(t),i=Math.round(t*this.LOADWIDTH/1e5),$(".J_load_bar").css("width",i),e=(t+"").replace(/\B(?=(?:\d{3})+$)/g,","),$(".J_load_num").html(e),$(".J_load_num").attr("data-num",t),$(".J_load_num").addClass("xm-animate-swing"),n=function(){return $(".J_load_num").removeClass("xm-animate-swing")},setTimeout(n,1e3)},getHurryAmount:function(){var t,n,e,i,r;return r=this,i=this.SERVERURL+"cheer/getcheeramount",e={},t=function(t){return"200"!==t.code?alert(t.info):t.amount>r.HURRYNUM?(r.HURRYNUM=t.amount,r.changeLoading(t.amount)):void 0},n=function(){return r.jsonp(i,e,t)},setInterval(n,2e3),n()},getHeadImgbyDb:function(t){var n,e,i,r;return i=this.SERVERURL+"cheer/getcheeruserinfo",e={cur_page:t},r=this,n=function(n){return"200"!==n.code?alert(n.info):(1===t?r.calHeadImg(n.user_list):r.changeHeadImg(n.user_list),0===n.user_list.length?clearInterval(r.loopRequestVal):void 0)},this.jsonp(i,e,n)},tmpl:function(t,n){var e,i,r;return i=document.getElementById(t),r=i.innerHTML,(e=doT.template(r))(n)},calHeadImg:function(t){var n,e,i,r;r=this,r.ranArray=[];for(n in t)e=t[n],r.ranArray.push(n);return i=r.tmpl("img-tmpl-b",t),$(".J_img_list").html(i),r.loopRequest()},changeHeadImg:function(t){var n,e,i,r,o,a,s;s=this,e=function(t,n){return s.updateImg(t,n.user_pic,n.user_id)},n=function(t,n){var i;return i=new Image,i.src=n.user_pic,i.complete?void e(t,n):i.onload=function(){return e(t,n)}},this.ranArray.sort(function(){return.5-Math.random()}),o=this.ranArray,a=[];for(i in o)r=o[i],a.push(i<t.length&&0!==parseInt(r)?n(r,t[i]):void 0);return a},imgtmpl:function(){var t,n,e;return e=this,t={},n=e.tmpl("img-tmpl",t),$(".J_img_list").html(n)},loopRequest:function(){var t;return t=function(){return this.LOOPINDEX++,this.getHeadImgbyDb(this.LOOPINDEX)},this.loopRequestVal=setInterval($.proxy(t,this),5e3)},updateImg:function(t,n,e){var i,r,o;return o=$(".J_img_list").find("li").eq(t),o.find("img").attr("class","front"),o.append(e&&parseInt(e)>500?"<a href='https://www.facebook.com/app_scoped_user_id/"+e+"' target='_blank'><img class='end' src='"+n+"'></a>":"<img class='end' src='"+n+"'>"),r=function(){return o.find(".front").remove(),o.find(".end").removeClass("end"),o.removeClass("changeImg")},i=function(){return o.addClass("changeImg"),setTimeout(r,1e3)},setTimeout(i,50)},pageScrollToSpot:function(t){var n;return n=t.offset().top-30,$("html,body").animate({scrollTop:n+"px"},500)},otherEvent:function(){var t;return this.getHurryAmount(),t=this,t.imgtmpl(),this.animateForward(),this.clickEvent(),$("html,body").animate({scrollTop:"0px"},500)},checkFloat:function(t){var n;return n=this,-1!==t.indexOf("check=true")?($("#J_india_loading").modal({show:!0,backdrop:"static"}),n.checkLogin()):void 0},judegeNum:function(t){return t>1e5?($(".J_head_main").addClass("head-more"),$(".J_less_num").hide(),$(".J_more_num").show()):($(".J_head_main").removeClass("head-more"),$(".J_less_num").show(),$(".J_more_num").hide())},initfb:function(){var t;return t=this,window.fbAsyncInit=function(){var n;return FB.init({appId:global.appId,cookie:!0,xfbml:!0,version:"v2.0"}),t.checkFloat(location.search),n=function(n){return t.RESPONSE=n,"connected"===n.status?(t.ISLOGIN=!0,t.getHeadImgbyFb(n.authResponse.accessToken)):(t.ISLOGIN=!1,t.ISLOADOVER=!0)},FB.getLoginStatus(function(t){return n(t)})}},animateForward:function(){var t,n;return n=0,t=function(){var t;return n++,t=n%3,1===t?($(".J_join").removeClass("img2").removeClass("img3"),$(".J_join").addClass("img1")):2===t?($(".J_join").removeClass("img1").removeClass("img3"),$(".J_join").addClass("img2")):0===t?($(".J_join").removeClass("img1").removeClass("img2"),$(".J_join").addClass("img3")):void 0},setInterval(t,300)}},t.init()}).call(this);
+(function() {
+  var main;
+
+  main = {
+    config: function() {
+      this.SERVERURL = global.serverurl;
+      this.TARGET = 100000;
+      this.LOADWIDTH = 1024;
+      this.LOOPINDEX = 1;
+      this.HEADARR = [];
+      this.HURRYNUM = 0;
+      this.ISNEW = false;
+      this.INDEXFLAG = 0;
+      this.ISLOADOVER = false;
+      this.ISCLICKLOGIN = false;
+      return this.ISLOGIN = false;
+    },
+    init: function() {
+      this.config();
+      return this.runAll();
+    },
+    runAll: function() {
+      this.initfb();
+      return this.otherEvent();
+    },
+    jsonp: function(url, param, callback) {
+      return $.ajax({
+        url: url,
+        dataType: "jsonp",
+        data: param,
+        jsonp: "jsonpcallback",
+        success: callback
+      });
+    },
+    login: function() {
+      var redirectUrl, url, _t;
+      _t = this;
+      redirectUrl = global.locationUrl + "?check=true";
+      url = "https://www.facebook.com/dialog/oauth?client_id=" + global.appId + "&redirect_uri=" + redirectUrl;
+      return location.href = url;
+    },
+    updateModal: function(modal) {
+      var callback, param, url, _t;
+      _t = this;
+      url = this.SERVERURL + "cheer/addcheer";
+      param = {
+        user_id: modal.userid,
+        user_pic: modal.img,
+        access_token: modal.token
+      };
+      callback = function(data) {
+        var str;
+        if (data.code === "300" || data.code === "200") {
+          str = data.index;
+          $(".J_fb_info").html(str);
+          $(".J_fb_username").html(modal.username);
+          $(".J_fb_userHead").attr("src", modal.img);
+          if (_t.ISCLICKLOGIN) {
+            $("#J_india_loading").modal("hide");
+            $("#J_india_modal").modal({
+              show: true,
+              backdrop: "static"
+            });
+          }
+          _t.ISLOADOVER = true;
+          if (data.code === "200") {
+            return _t.ISNEW = true;
+          } else {
+            return _t.ISNEW = false;
+          }
+        } else {
+          $("#J_india_loading").modal("hide");
+          _t.ISNEW = false;
+          return alert(data.info);
+        }
+      };
+      return this.jsonp(url, param, callback);
+    },
+    getHeadImgbyFb: function(accessToken) {
+      var callback, url_a, url_b, userid, username, _t;
+      _t = this;
+      url_a = "https://graph.facebook.com/v2.0/me/picture?redirect=false&width=200&height=200&method=GET&format=json&suppress_http_code=1&access_token=" + accessToken;
+      url_b = "https://graph.facebook.com/v2.0/me?method=GET&format=json&suppress_http_code=1&access_token=" + accessToken;
+      userid = "";
+      username = "";
+      callback = function() {
+        return $.get(url_a, function(data) {
+          var modalData;
+          modalData = {
+            username: username,
+            img: data.data.url,
+            userid: userid,
+            token: accessToken
+          };
+          return _t.updateModal(modalData);
+        });
+      };
+      return $.get(url_b, function(data) {
+        userid = data.id;
+        username = data.name;
+        return callback();
+      });
+    },
+    checkLogin: function() {
+      var response, _t;
+      _t = this;
+      response = _t.RESPONSE;
+      if (_t.ISLOGIN) {
+        return _t.getHeadImgbyFb(response.authResponse.accessToken);
+      } else {
+        return _t.login(response);
+      }
+    },
+    shareFb: function() {
+      return FB.ui({
+        method: 'feed',
+        name: shareInfo.name,
+        caption: shareInfo.caption,
+        description: shareInfo.description,
+        link: shareInfo.link,
+        picture: shareInfo.picture
+      });
+    },
+    clickEvent: function() {
+      var scrollCallback, scrollIndex, _t;
+      _t = this;
+      $("body").on("click", ".J_fb_login", function() {
+        $("#J_india_loading").modal({
+          show: true,
+          backdrop: "static"
+        });
+        _t.ISCLICKLOGIN = true;
+        if (_t.ISLOADOVER) {
+          if (_t.ISLOGIN) {
+            $('#J_india_modal').on('shown.bs.modal', function() {
+              return $("#J_india_loading").modal("hide");
+            });
+            return $("#J_india_modal").modal({
+              show: true,
+              backdrop: "static"
+            }).trigger('shown');
+          } else {
+            return _t.login();
+          }
+        }
+      });
+      $(".J_fb_share").click(function() {
+        return _t.shareFb();
+      });
+      $(".J_india_modal_close").click(function() {
+        var num, url;
+        num = $(".J_load_num").attr("data-num");
+        $("#J_india_modal").modal("hide");
+        if (num > _t.HURRYNUM) {
+          _t.changeLoading(num);
+        }
+        if (_t.ISNEW) {
+          url = $(".J_fb_userHead").attr("src");
+          return _t.updateImg(0, url);
+        }
+      });
+      scrollIndex = 0;
+      scrollCallback = function() {
+        var attr;
+        scrollIndex++;
+        if (scrollIndex === 1) {
+          attr = $(".J_join").attr("href").substring(1);
+          _t.pageScrollToSpot($("." + attr));
+          $(".J_join").fadeOut(200);
+          return _t.getHeadImgbyDb(1);
+        }
+      };
+      $(".J_join").click(function() {
+        return scrollCallback();
+      });
+      document.onmousewheel = scrollCallback;
+      return document.addEventListener('DOMMouseScroll', scrollCallback, false);
+    },
+    changeLoading: function(num) {
+      var callback, strnum, width, _t;
+      num = parseInt(num);
+      _t = this;
+      _t.judegeNum(num);
+      width = Math.round(num * this.LOADWIDTH / 100000);
+      $(".J_load_bar").css("width", width);
+      strnum = (num + "").replace(/\B(?=(?:\d{3})+$)/g, ',');
+      $(".J_load_num").html(strnum);
+      $(".J_load_num").attr("data-num", num);
+      $(".J_load_num").addClass("xm-animate-swing");
+      callback = function() {
+        return $(".J_load_num").removeClass("xm-animate-swing");
+      };
+      return setTimeout(callback, 1000);
+    },
+    getHurryAmount: function() {
+      var callback, callback_a, param, url, _t;
+      _t = this;
+      url = this.SERVERURL + "cheer/getcheeramount";
+      param = {};
+      callback = function(data) {
+        if (data.code === "200") {
+          if (data.amount > _t.HURRYNUM) {
+            _t.HURRYNUM = data.amount;
+            return _t.changeLoading(data.amount);
+          }
+        } else {
+          return alert(data.info);
+        }
+      };
+      callback_a = function() {
+        return _t.jsonp(url, param, callback);
+      };
+      setInterval(callback_a, 2000);
+      return callback_a();
+    },
+    getHeadImgbyDb: function(cur_page) {
+      var callback, param, url, _t;
+      url = this.SERVERURL + "cheer/getcheeruserinfo";
+      param = {
+        cur_page: cur_page
+      };
+      _t = this;
+      callback = function(data) {
+        if (data.code === "200") {
+          if (cur_page === 1) {
+            _t.calHeadImg(data.user_list);
+          } else {
+            _t.changeHeadImg(data.user_list);
+          }
+          if (data.user_list.length === 0) {
+            return clearInterval(_t.loopRequestVal);
+          }
+        } else {
+          return alert(data.info);
+        }
+      };
+      return this.jsonp(url, param, callback);
+    },
+    tmpl: function(name, obj) {
+      var doTtmpl, tmpl, tmplHtml;
+      tmpl = document.getElementById(name);
+      tmplHtml = tmpl.innerHTML;
+      doTtmpl = doT.template(tmplHtml);
+      return doTtmpl(obj);
+    },
+    calHeadImg: function(list) {
+      var index, obj, str, _t;
+      _t = this;
+      _t.ranArray = [];
+      for (index in list) {
+        obj = list[index];
+        _t.ranArray.push(index);
+      }
+      str = _t.tmpl("img-tmpl-b", list);
+      $(".J_img_list").html(str);
+      return _t.loopRequest();
+    },
+    changeHeadImg: function(list) {
+      var callback_a, callback_b, index, obj, _ref, _results, _t;
+      _t = this;
+      callback_b = function(index, obj) {
+        return _t.updateImg(index, obj.user_pic, obj.user_id);
+      };
+      callback_a = function(index, obj) {
+        var img;
+        img = new Image();
+        img.src = obj.user_pic;
+        if (img.complete) {
+          callback_b(index, obj);
+          return;
+        }
+        return img.onload = function() {
+          return callback_b(index, obj);
+        };
+      };
+      this.ranArray.sort(function() {
+        return 0.5 - Math.random();
+      });
+      _ref = this.ranArray;
+      _results = [];
+      for (index in _ref) {
+        obj = _ref[index];
+        if (index < list.length && parseInt(obj) !== 0) {
+          _results.push(callback_a(obj, list[index]));
+        } else {
+          _results.push(void 0);
+        }
+      }
+      return _results;
+    },
+    imgtmpl: function() {
+      var list, str, _t;
+      _t = this;
+      list = {};
+      str = _t.tmpl("img-tmpl", list);
+      return $(".J_img_list").html(str);
+    },
+    loopRequest: function() {
+      var callback;
+      callback = function() {
+        this.LOOPINDEX++;
+        return this.getHeadImgbyDb(this.LOOPINDEX);
+      };
+      return this.loopRequestVal = setInterval($.proxy(callback, this), 5000);
+    },
+    updateImg: function(index, url, userid) {
+      var callback_a, callback_b, obj;
+      obj = $(".J_img_list").find("li").eq(index);
+      obj.find("img").attr("class", "front");
+      if (userid && (parseInt(userid) > 500)) {
+        obj.append("<a href='https://www.facebook.com/app_scoped_user_id/" + userid + "' target='_blank'><img class='end' src='" + url + "'></a>");
+      } else {
+        obj.append("<img class='end' src='" + url + "'>");
+      }
+      callback_b = function() {
+        obj.find(".front").remove();
+        obj.find(".end").removeClass("end");
+        return obj.removeClass("changeImg");
+      };
+      callback_a = function() {
+        obj.addClass("changeImg");
+        return setTimeout(callback_b, 1000);
+      };
+      return setTimeout(callback_a, 50);
+    },
+    pageScrollToSpot: function(obj) {
+      var oT;
+      oT = obj.offset().top - 30;
+      return $("html,body").animate({
+        "scrollTop": oT + 'px'
+      }, 500);
+    },
+    otherEvent: function() {
+      var _t;
+      this.getHurryAmount();
+      _t = this;
+      _t.imgtmpl();
+      this.animateForward();
+      this.clickEvent();
+      return $("html,body").animate({
+        "scrollTop": '0px'
+      }, 500);
+    },
+    checkFloat: function(str) {
+      var _t;
+      _t = this;
+      if (str.indexOf("check=true") !== -1) {
+        $("#J_india_loading").modal({
+          show: true,
+          backdrop: "static"
+        });
+        return _t.checkLogin();
+      }
+    },
+    judegeNum: function(num) {
+      if (num > 100000) {
+        $(".J_head_main").addClass("head-more");
+        $(".J_less_num").hide();
+        return $(".J_more_num").show();
+      } else {
+        $(".J_head_main").removeClass("head-more");
+        $(".J_less_num").show();
+        return $(".J_more_num").hide();
+      }
+    },
+    initfb: function() {
+      var _t;
+      _t = this;
+      return window.fbAsyncInit = function() {
+        var statusChangeCallback;
+        FB.init({
+          appId: global.appId,
+          cookie: true,
+          xfbml: true,
+          version: 'v2.0'
+        });
+        _t.checkFloat(location.search);
+        statusChangeCallback = function(response) {
+          _t.RESPONSE = response;
+          if (response.status === 'connected') {
+            _t.ISLOGIN = true;
+            return _t.getHeadImgbyFb(response.authResponse.accessToken);
+          } else {
+            _t.ISLOGIN = false;
+            return _t.ISLOADOVER = true;
+          }
+        };
+        return FB.getLoginStatus(function(response) {
+          return statusChangeCallback(response);
+        });
+      };
+    },
+    animateForward: function() {
+      var callback, index;
+      index = 0;
+      callback = function() {
+        var num;
+        index++;
+        num = index % 3;
+        if (num === 1) {
+          $(".J_join").removeClass("img2").removeClass("img3");
+          return $(".J_join").addClass("img1");
+        } else if (num === 2) {
+          $(".J_join").removeClass("img1").removeClass("img3");
+          return $(".J_join").addClass("img2");
+        } else if (num === 0) {
+          $(".J_join").removeClass("img1").removeClass("img2");
+          return $(".J_join").addClass("img3");
+        }
+      };
+      return setInterval(callback, 300);
+    }
+  };
+
+  main.init();
+
+}).call(this);

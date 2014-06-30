@@ -4,10 +4,14 @@
 @import "compass/utilities";
 @import "blueprint/colors";
 @import "compass/layout";
+@import "../util/modal";
 $bodyHeight:700px;
 $borderHei:600px;
 $circleHei:30px;
 $circleWid:30px;
+.hide{
+	display:none;
+}
 .main{
 	width:100%;
 	height:$bodyHeight;
@@ -193,6 +197,23 @@ $circleWid:30px;
 					height: 38px;
 				}
 			}
+			.group{
+				position: absolute;
+				top: 9px;
+				left:415px;
+				height: 40px;
+				line-height: 40px;
+				width: 80px;
+				background-color:gray;
+				color:#fff;
+				text-align: center;
+				font-size: 17px;
+				border-radius:10px;
+				cursor: pointer;
+				&:hover{
+					height: 38px;
+				}
+			}
 		}
 		
 		
@@ -217,3 +238,38 @@ $circleWid:30px;
 	}
 }
 
+div.css-modal{
+	.modal-header{
+		height: 40px;
+		line-height: 40px;
+		font-size: 30px;
+		color:#000;
+		a.close{
+			font-size: 35px;
+			cursor: pointer;
+			right: 8px;
+			top: 17px;	
+			font-size: 35px;
+		}
+	}
+	.modal-body{
+		padding: 10px;
+		.input-textarea{
+			border:none;
+			width: 537px;
+			resize: none;
+			height: 350px;	
+			outline: none;
+			font-size: 25px;
+			line-height: 25px;
+		}
+		
+	}
+	.modal-footer{
+		text-align: center;
+		font-size: 35px;
+		line-height: 40px;
+		height: 40px;
+		cursor: pointer;
+	}
+}

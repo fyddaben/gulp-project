@@ -61,14 +61,15 @@ Controll=
  	calPer:(top,ball)->
  		
  		per= parseInt(top/@BORDERHEI*100)
- 		if per>99
+ 		if per>100
  			return
  		ball.html per
  	#增加一个控制球
  	addOneBall:()->
  		
- 		cirId= @COUNT++
- 		
+
+ 		@COUNT= @COUNT+1
+ 		cirId= @COUNT
  		obj=
  			cirId:cirId
  			color:@getRandomCol()
@@ -95,6 +96,14 @@ Controll=
  			_t.addOneBall()
  			
  		)
+ 		$(".J_code_sure").click ()->
+ 			val= $(".J_code_content").val()
+ 			
+ 			if val is ""
+ 				alert "please input content"
+ 			else
+ 				_t.execpCss val
+ 				$("#J_input_code").modal("hide")
  		$(".J_play").click(()->
  			
  			perarr= _t.getDataByPlay()
@@ -122,7 +131,7 @@ Controll=
  			$(".J_roundBall").removeAttr "style"
  		)
  		$(".J_log").click(()->
- 			alert("请打开控制台");
+ 			alert("please open chrome dev tool=> console");
  			console.log _t.LOGCSS
  		)
  		$(document).on "click",".J_exitBtn",()->
@@ -133,9 +142,9 @@ Controll=
  			$("."+cirStr).remove()
  			$(this).remove()
  		
- 			
-
- 	#点击play按钮，获取数据
+ 		$(".J_group").click ()->
+ 			$("#J_input_code").modal("show")
+	#点击play按钮，获取数据
  	getDataByPlay:()->
  		perarr= []
  		_t= this;
@@ -181,8 +190,7 @@ Controll=
 	 					val:obj.split(":")[1]
 	 				arr_b.push unitObj
  		return arr_b
- 	demo_animate:(obj)->
- 		
+ 	demo_animate:(obj)-> 		
  		attr= [];
  		unitObj=
  			name: 'animate',
@@ -200,10 +208,26 @@ Controll=
 
  			unitObj[per]= perObj
  		_t.LOGCSS= "{"+_t.LOGCSS+"}"
-
  		attr.push unitObj
-
  		$.keyframe.define attr
-		
-
+ 	execpCss:(val)->
+ 		arr_a= val.match(/\w+[%].*?[{].*?[}]/gim)
+ 		arr_b= []
+ 		_t= @
+ 		for index,obj of arr_a
+ 			data= {}
+ 			per= obj.match(/\d+[%]/gim)[0]
+ 			str= obj.match(/{(.*?)}/gim)[0]
+ 			data.cirId= parseInt(index) 
+ 			_t.COUNT= parseInt(index) 
+ 			num= parseInt per.match(/\d+[^%]/gim)[0]
+ 			data.num= num
+ 			data.val= str.match(/[^{}]+/gim)[0]
+ 			data.top= num/100*_t.BORDERHEI
+ 			data.color= _t.getRandomCol()
+ 			arr_b.push data
+ 		str= @tmpl "circle-tmpl-b",arr_b
+ 		str_con= @tmpl "input-tmpl-b",arr_b
+ 		$(".J_inputFrm").html str_con
+ 		$(".J_border").html str
 Controll.init()
