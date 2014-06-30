@@ -8,7 +8,7 @@
     <meta name="keywords" content="">
     <link rel="shortcut icon" href="http://www.mi.com/favicon.ico" type="image/x-icon">
     <link rel="icon" href="http://www.mi.com/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="http://ben.mi.com/assets/temp/140624/ani.css">
+    <link rel="stylesheet" href="http://page.zgenk.com/css/140629/ani.css">
   </head>
   <body>
     <div class="main">
@@ -31,11 +31,14 @@
         <div class="circle-obj J_roundBall"></div>
       </div>
     </div>
-    <script src="http://ben.mi.com/js/util/jquery.js"></script>
-    <script src="http://ben.mi.com/js/util/jquery.keyframes.min.js"></script>
-    <script src="http://ben.mi.com/js/util/doT.js"></script>
-    <script id="circle-tmpl" type="text/template"><div data-input="J_input_{{=it.cirId}}" class="circle J_circle clickCircle" style="background-color:{{=it.color}};">0</div></script>
-    <script id="input-tmpl" type="text/template"><input class="input-content J_input_{{=it.cirId}}" ></script>
-    <script src="http://ben.mi.com/js/140624/ani.js"></script>
+    <script src="http://page.zgenk.com/js/util/jquery.js"></script>
+    <script src="http://page.zgenk.com/js/util/jquery.keyframes.min.js"></script>
+    <script src="http://page.zgenk.com/js/util/doT.js"></script>
+    <script id="circle-tmpl" type="text/template"><div data-input="J_input_{{=it.cirId}}" data-exit="J_exit_{{=it.cirId}}" class="circle J_circle clickCircle J_circle_{{=it.cirId}}" style="background-color:{{=it.color}};">0</div></script>
+    <script id="input-tmpl" type="text/template">
+      <input class="input-content J_input_{{=it.cirId}}" >
+      <div class="exit J_exit_{{=it.cirId}} J_exitBtn" data-id="{{=it.cirId}}">x</div>
+    </script>
+    <script src="http://page.zgenk.com/js/140629/ani.js"></script>
   </body>
 </html>

@@ -110,6 +110,20 @@ $circleWid:30px;
 					position: absolute;
 					left:0px;
 					top: 0px;
+
+				}
+				.exit{
+					position: absolute;
+					top: 0;
+					left: -30px;
+					width: 30px;
+					height: 30px;
+					text-align: center;
+					background-color: #000;
+					color: #fff;
+					border-radius: 50%;
+					line-height: 30px;
+					cursor: pointer;		
 				}
 				.blood{
 					background-color:rgb(182, 3, 3);

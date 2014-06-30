@@ -13,7 +13,7 @@ block content
 				.border-num.J_border
 				
 						
-				.addBallBtn.J_addBtn
+				.addBallBtn.J_addBtn 
 					|+
 				.playStart.J_play
 					| PLAY
@@ -35,8 +35,9 @@ block content
 	script(src="http://ben.mi.com/js/util/jquery.keyframes.min.js")
 	script(src="http://ben.mi.com/js/util/doT.js")
 	script(id="circle-tmpl",type="text/template")
-		<div data-input="J_input_{{=it.cirId}}" class="circle J_circle clickCircle" style="background-color:{{=it.color}};">0</div>
+		<div data-input="J_input_{{=it.cirId}}" data-exit="J_exit_{{=it.cirId}}" class="circle J_circle clickCircle J_circle_{{=it.cirId}}" style="background-color:{{=it.color}};">0</div>
 	script(id="input-tmpl",type="text/template")
 		<input class="input-content J_input_{{=it.cirId}}" >
+		<div class="exit J_exit_{{=it.cirId}} J_exitBtn" data-id="{{=it.cirId}}">x</div>
 	script(src="http://ben.mi.com/js/140624/ani.js")
 	

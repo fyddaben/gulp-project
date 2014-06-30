@@ -8,6 +8,8 @@ Controll=
  		@BORDERHEI=parseInt($(".J_border").css("height"))-30
  		#记录css动画轨迹
  		@LOGCSS= ""
+ 		#初始球形百分比的个数
+ 		@COUNT= 0
  		return
  	runAll:()->	
  		@addOneBall()
@@ -50,7 +52,11 @@ Controll=
  	#根据圆球距离顶部的高度，改变输入框的高度
  	changeInputHei:(top,ball)->
  		classAtr= ball.attr("data-input")
+ 		exitAtr= ball.attr "data-exit"
+
  		$("."+classAtr).css("top",top)
+
+ 		$("."+exitAtr).css("top",top)	
  	#根据圆球距离顶部的高度，判断百分比
  	calPer:(top,ball)->
  		
@@ -60,11 +66,13 @@ Controll=
  		ball.html per
  	#增加一个控制球
  	addOneBall:()->
- 		length= $(".J_border").find(".J_circle").length;
- 		cirId= length+1
+ 		
+ 		cirId= @COUNT++
+ 		
  		obj=
  			cirId:cirId
  			color:@getRandomCol()
+ 		
  		str= @tmpl "circle-tmpl",obj
 
  		str_input= @tmpl "input-tmpl",obj
@@ -117,6 +125,16 @@ Controll=
  			alert("请打开控制台");
  			console.log _t.LOGCSS
  		)
+ 		$(document).on "click",".J_exitBtn",()->
+ 			id= $(this).attr "data-id"
+ 			inputStr= "J_input_"+id
+ 			cirStr= "J_circle_"+id
+ 			$("."+inputStr).remove()
+ 			$("."+cirStr).remove()
+ 			$(this).remove()
+ 		
+ 			
+
  	#点击play按钮，获取数据
  	getDataByPlay:()->
  		perarr= []

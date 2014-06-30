@@ -207,11 +207,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   left: 0px;
   top: 0px;
 }
-/* line 114, ../../../../client/sass/140624/ani.scss */
+/* line 115, ../../../../client/sass/140624/ani.scss */
+.main .left-part .left-part-rightArea .input-frame .exit {
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  line-height: 30px;
+  cursor: pointer;
+}
+/* line 128, ../../../../client/sass/140624/ani.scss */
 .main .left-part .left-part-rightArea .input-frame .blood {
   background-color: #b60303;
 }
-/* line 118, ../../../../client/sass/140624/ani.scss */
+/* line 132, ../../../../client/sass/140624/ani.scss */
 .main .left-part .left-part-rightArea .input-dur {
   width: 50px;
   height: 35px;
@@ -222,7 +236,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   top: 656px;
   left: 100px;
 }
-/* line 128, ../../../../client/sass/140624/ani.scss */
+/* line 142, ../../../../client/sass/140624/ani.scss */
 .main .left-part .left-part-rightArea .input-fun {
   width: 80px;
   height: 35px;
@@ -233,7 +247,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   top: 656px;
   left: 185px;
 }
-/* line 138, ../../../../client/sass/140624/ani.scss */
+/* line 152, ../../../../client/sass/140624/ani.scss */
 .main .left-part .left-part-rightArea .input-repeat {
   width: 80px;
   height: 35px;
@@ -244,7 +258,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   top: 656px;
   left: 305px;
 }
-/* line 148, ../../../../client/sass/140624/ani.scss */
+/* line 162, ../../../../client/sass/140624/ani.scss */
 .main .left-part .left-part-rightArea .resume {
   position: absolute;
   top: 9px;
@@ -259,11 +273,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   border-radius: 10px;
   cursor: pointer;
 }
-/* line 161, ../../../../client/sass/140624/ani.scss */
+/* line 175, ../../../../client/sass/140624/ani.scss */
 .main .left-part .left-part-rightArea .resume:hover {
   height: 38px;
 }
-/* line 165, ../../../../client/sass/140624/ani.scss */
+/* line 179, ../../../../client/sass/140624/ani.scss */
 .main .left-part .left-part-rightArea .log {
   position: absolute;
   top: 9px;
@@ -278,11 +292,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   border-radius: 10px;
   cursor: pointer;
 }
-/* line 178, ../../../../client/sass/140624/ani.scss */
+/* line 192, ../../../../client/sass/140624/ani.scss */
 .main .left-part .left-part-rightArea .log:hover {
   height: 38px;
 }
-/* line 187, ../../../../client/sass/140624/ani.scss */
+/* line 201, ../../../../client/sass/140624/ani.scss */
 .main .right-part {
   display: inline;
   float: left;
@@ -290,7 +304,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   height: 700px;
   position: relative;
 }
-/* line 193, ../../../../client/sass/140624/ani.scss */
+/* line 207, ../../../../client/sass/140624/ani.scss */
 .main .right-part .circle-obj {
   width: 100px;
   height: 100px;
