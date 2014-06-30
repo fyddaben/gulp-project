@@ -22,7 +22,9 @@ gulp-project
     100% {background: red; left:0px; top:0px;}
 ```
 `PLAY` start animate
+
 `RESUME` reset animate
+
 `LOG` modal used show css ,and u can edit
 
 
