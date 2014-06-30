@@ -131,8 +131,11 @@
         return $(".J_roundBall").removeAttr("style");
       });
       $(".J_log").click(function() {
-        alert("please open chrome dev tool=> console");
-        return console.log(_t.LOGCSS);
+        var perarr, unitObj;
+        perarr = _t.getDataByPlay();
+        unitObj = _t.getUnitObj(perarr);
+        $(".J_code_content").val(_t.LOGCSS);
+        return $("#J_input_code").modal("show");
       });
       $(document).on("click", ".J_exitBtn", function() {
         var cirStr, id, inputStr;
@@ -197,8 +200,15 @@
       return arr_b;
     },
     demo_animate: function(obj) {
-      var attr, con, con_b, css_str, index, index_b, per, perObj, unitObj, _ref, _t;
+      var attr, unitObj, _t;
       attr = [];
+      _t = this;
+      unitObj = _t.getUnitObj(obj);
+      attr.push(unitObj);
+      return $.keyframe.define(attr);
+    },
+    getUnitObj: function(obj) {
+      var con, con_b, css_str, index, index_b, per, perObj, unitObj, _ref, _t;
       unitObj = {
         name: 'animate'
       };
@@ -219,8 +229,7 @@
         unitObj[per] = perObj;
       }
       _t.LOGCSS = "{" + _t.LOGCSS + "}";
-      attr.push(unitObj);
-      return $.keyframe.define(attr);
+      return unitObj;
     },
     execpCss: function(val) {
       var arr_a, arr_b, data, index, num, obj, per, str, str_con, _t;
@@ -234,7 +243,7 @@
         str = obj.match(/{(.*?)}/gim)[0];
         data.cirId = parseInt(index);
         _t.COUNT = parseInt(index);
-        num = parseInt(per.match(/\d+[^%]/gim)[0]);
+        num = parseInt(per.match(/\d+/gim)[0]);
         data.num = num;
         data.val = str.match(/[^{}]+/gim)[0];
         data.top = num / 100 * _t.BORDERHEI;

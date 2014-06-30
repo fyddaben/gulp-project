@@ -131,8 +131,10 @@ Controll=
  			$(".J_roundBall").removeAttr "style"
  		)
  		$(".J_log").click(()->
- 			alert("please open chrome dev tool=> console");
- 			console.log _t.LOGCSS
+ 			perarr= _t.getDataByPlay()
+ 			unitObj= _t.getUnitObj perarr
+ 			$(".J_code_content").val _t.LOGCSS
+ 			$("#J_input_code").modal "show"
  		)
  		$(document).on "click",".J_exitBtn",()->
  			id= $(this).attr "data-id"
@@ -192,6 +194,13 @@ Controll=
  		return arr_b
  	demo_animate:(obj)-> 		
  		attr= [];
+ 		_t= @
+ 		unitObj= _t.getUnitObj obj
+ 		
+ 		attr.push unitObj
+ 		$.keyframe.define attr
+ 	getUnitObj:(obj)->
+ 		
  		unitObj=
  			name: 'animate',
  		_t= @
@@ -208,8 +217,7 @@ Controll=
 
  			unitObj[per]= perObj
  		_t.LOGCSS= "{"+_t.LOGCSS+"}"
- 		attr.push unitObj
- 		$.keyframe.define attr
+ 		return unitObj
  	execpCss:(val)->
  		arr_a= val.match(/\w+[%].*?[{].*?[}]/gim)
  		arr_b= []
@@ -220,7 +228,7 @@ Controll=
  			str= obj.match(/{(.*?)}/gim)[0]
  			data.cirId= parseInt(index) 
  			_t.COUNT= parseInt(index) 
- 			num= parseInt per.match(/\d+[^%]/gim)[0]
+ 			num= parseInt per.match(/\d+/gim)[0]
  			data.num= num
  			data.val= str.match(/[^{}]+/gim)[0]
  			data.top= num/100*_t.BORDERHEI
