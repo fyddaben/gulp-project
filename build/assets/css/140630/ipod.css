@@ -1,0 +1,1151 @@
+/* line 17, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 7, ../../../../client/sass/140630/ipod.scss */
+.main {
+  width: 950px;
+  margin: 0 auto;
+}
+/* line 10, ../../../../client/sass/140630/ipod.scss */
+.main .piclist {
+  width: 860px;
+  margin: 0 auto;
+  margin-top: 100px;
+  overflow: hidden;
+  *zoom: 1;
+  overflow: visible;
+}
+/* line 16, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li {
+  display: inline;
+  float: left;
+  width: 140px;
+  height: 150px;
+}
+/* line 20, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li img {
+  width: 130px;
+  height: 130px;
+  opacity: 0;
+}
+/* line 27, ../../../../client/sass/140630/ipod.scss */
+.main .piclist .status_show {
+  display: inline;
+}
+/* line 30, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_exit {
+  -webkit-animation-name: exit-left;
+  -webkit-animation-duration: .8s;
+}
+/* line 34, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_exit:nth-child(1) {
+  -webkit-animation-delay: 0.05s;
+}
+/* line 37, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_exit:nth-child(2) {
+  -webkit-animation-delay: 0.10s;
+}
+/* line 40, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_exit:nth-child(3) {
+  -webkit-animation-delay: 0.15s;
+}
+/* line 43, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_exit:nth-child(4) {
+  -webkit-animation-delay: 0.2s;
+}
+/* line 46, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_exit:nth-child(5) {
+  -webkit-animation-delay: 0.25s;
+}
+/* line 49, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_exit:nth-child(6) {
+  -webkit-animation-delay: 0.3s;
+}
+/* line 52, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_hide {
+  opacity: 0;
+}
+/* line 55, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_enter {
+  -webkit-animation-name: enter-left;
+  -webkit-animation-duration: .5s;
+}
+/* line 60, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_enter:nth-child(1) {
+  -webkit-animation-delay: 0.3s;
+}
+/* line 63, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_enter:nth-child(2) {
+  -webkit-animation-delay: 0.25s;
+}
+/* line 66, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_enter:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+}
+/* line 69, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_enter:nth-child(4) {
+  -webkit-animation-delay: 0.15s;
+}
+/* line 72, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_enter:nth-child(5) {
+  -webkit-animation-delay: 0.1s;
+}
+/* line 75, ../../../../client/sass/140630/ipod.scss */
+.main .piclist li.status_enter:nth-child(6) {
+  -webkit-animation-delay: 0.05s;
+}
+/* line 81, ../../../../client/sass/140630/ipod.scss */
+.main .pb-open li img {
+  opacity: 1;
+  -webkit-animation-duration: .8s;
+}
+/* line 84, ../../../../client/sass/140630/ipod.scss */
+.main .pb-open li:nth-child(1) img {
+  -webkit-animation-name: open-1;
+}
+/* line 87, ../../../../client/sass/140630/ipod.scss */
+.main .pb-open li:nth-child(2) img {
+  -webkit-animation-name: open-2;
+}
+/* line 90, ../../../../client/sass/140630/ipod.scss */
+.main .pb-open li:nth-child(3) img {
+  -webkit-animation-name: open-3;
+}
+/* line 93, ../../../../client/sass/140630/ipod.scss */
+.main .pb-open li:nth-child(4) img {
+  -webkit-animation-name: open-4;
+}
+/* line 96, ../../../../client/sass/140630/ipod.scss */
+.main .pb-open li:nth-child(5) img {
+  -webkit-animation-name: open-5;
+}
+/* line 99, ../../../../client/sass/140630/ipod.scss */
+.main .pb-open li:nth-child(6) img {
+  -webkit-animation-name: open-6;
+}
+/* line 102, ../../../../client/sass/140630/ipod.scss */
+.main .pb-open li:nth-child(7) img {
+  -webkit-animation-name: open-1;
+}
+/* line 105, ../../../../client/sass/140630/ipod.scss */
+.main .pb-open li:nth-child(8) img {
+  -webkit-animation-name: open-1;
+}
+/* line 108, ../../../../client/sass/140630/ipod.scss */
+.main .pb-open li:nth-child(9) img {
+  -webkit-animation-name: open-1;
+}
+/* line 115, ../../../../client/sass/140630/ipod.scss */
+.main .pb-opend li img {
+  opacity: 1;
+}
+/* line 120, ../../../../client/sass/140630/ipod.scss */
+.main .control-btn {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  background-color: red;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  margin-left: -50px;
+  cursor: pointer;
+}
+
+/* exit left keyframes */
+@-webkit-keyframes exit-left {
+  /* line 138, ../../../../client/sass/140630/ipod.scss */
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 139, ../../../../client/sass/140630/ipod.scss */
+  100% {
+    -webkit-transform: translate3d(-3000px, 0, 0);
+  }
+}
+
+/* enter left keyframes */
+@-webkit-keyframes enter-left {
+  /* line 145, ../../../../client/sass/140630/ipod.scss */
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+  }
+
+  /* line 146, ../../../../client/sass/140630/ipod.scss */
+  4% {
+    opacity: 1;
+    -webkit-transform: translate3d(-955px, 0, 0);
+  }
+
+  /* line 147, ../../../../client/sass/140630/ipod.scss */
+  8% {
+    opacity: 1;
+    -webkit-transform: translate3d(-764px, 0, 0);
+  }
+
+  /* line 148, ../../../../client/sass/140630/ipod.scss */
+  12% {
+    opacity: 1;
+    -webkit-transform: translate3d(-573px, 0, 0);
+  }
+
+  /* line 149, ../../../../client/sass/140630/ipod.scss */
+  16% {
+    opacity: 1;
+    -webkit-transform: translate3d(-382px, 0, 0);
+  }
+
+  /* line 150, ../../../../client/sass/140630/ipod.scss */
+  20% {
+    opacity: 1;
+    -webkit-transform: translate3d(-191px, 0, 0);
+  }
+
+  /* line 151, ../../../../client/sass/140630/ipod.scss */
+  24% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 152, ../../../../client/sass/140630/ipod.scss */
+  28% {
+    opacity: 1;
+    -webkit-transform: translate3d(52px, 0, 0);
+  }
+
+  /* line 153, ../../../../client/sass/140630/ipod.scss */
+  32% {
+    opacity: 1;
+    -webkit-transform: translate3d(34px, 0, 0);
+  }
+
+  /* line 154, ../../../../client/sass/140630/ipod.scss */
+  36% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 155, ../../../../client/sass/140630/ipod.scss */
+  40% {
+    opacity: 1;
+    -webkit-transform: translate3d(-15px, 0, 0);
+  }
+
+  /* line 156, ../../../../client/sass/140630/ipod.scss */
+  44% {
+    opacity: 1;
+    -webkit-transform: translate3d(-10px, 0, 0);
+  }
+
+  /* line 157, ../../../../client/sass/140630/ipod.scss */
+  48% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 158, ../../../../client/sass/140630/ipod.scss */
+  52% {
+    opacity: 1;
+    -webkit-transform: translate3d(4px, 0, 0);
+  }
+
+  /* line 159, ../../../../client/sass/140630/ipod.scss */
+  56% {
+    opacity: 1;
+    -webkit-transform: translate3d(3px, 0, 0);
+  }
+
+  /* line 160, ../../../../client/sass/140630/ipod.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 161, ../../../../client/sass/140630/ipod.scss */
+  64% {
+    opacity: 1;
+    -webkit-transform: translate3d(-1px, 0, 0);
+  }
+
+  /* line 162, ../../../../client/sass/140630/ipod.scss */
+  68% {
+    opacity: 1;
+    -webkit-transform: translate3d(-1px, 0, 0);
+  }
+
+  /* line 163, ../../../../client/sass/140630/ipod.scss */
+  72% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 164, ../../../../client/sass/140630/ipod.scss */
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+/* open browser keyframes */
+@-webkit-keyframes open-1 {
+  /* line 170, ../../../../client/sass/140630/ipod.scss */
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(210px, -145px, 0);
+  }
+
+  /* line 171, ../../../../client/sass/140630/ipod.scss */
+  25% {
+    opacity: 1;
+    -webkit-transform: translate3d(-15.6px, 4.1px, 0);
+  }
+
+  /* line 172, ../../../../client/sass/140630/ipod.scss */
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(-10.3px, 2.7px, 0);
+  }
+
+  /* line 173, ../../../../client/sass/140630/ipod.scss */
+  35% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 174, ../../../../client/sass/140630/ipod.scss */
+  40% {
+    opacity: 1;
+    -webkit-transform: translate3d(4.5px, -1.2px, 0);
+  }
+
+  /* line 175, ../../../../client/sass/140630/ipod.scss */
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(2.9px, -0.8px, 0);
+  }
+
+  /* line 176, ../../../../client/sass/140630/ipod.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 177, ../../../../client/sass/140630/ipod.scss */
+  55% {
+    opacity: 1;
+    -webkit-transform: translate3d(-1.3px, 0.3px, 0);
+  }
+
+  /* line 178, ../../../../client/sass/140630/ipod.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.8px, 0.2px, 0);
+  }
+
+  /* line 179, ../../../../client/sass/140630/ipod.scss */
+  65% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 180, ../../../../client/sass/140630/ipod.scss */
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.4px, -0.1px, 0);
+  }
+
+  /* line 181, ../../../../client/sass/140630/ipod.scss */
+  75% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.2px, -0.1px, 0);
+  }
+
+  /* line 182, ../../../../client/sass/140630/ipod.scss */
+  80% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 183, ../../../../client/sass/140630/ipod.scss */
+  85% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.1px, 0, 0);
+  }
+
+  /* line 184, ../../../../client/sass/140630/ipod.scss */
+  90% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.1px, 0, 0);
+  }
+
+  /* line 185, ../../../../client/sass/140630/ipod.scss */
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes open-2 {
+  /* line 189, ../../../../client/sass/140630/ipod.scss */
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(235px, -145px, 0);
+  }
+
+  /* line 190, ../../../../client/sass/140630/ipod.scss */
+  25% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 191, ../../../../client/sass/140630/ipod.scss */
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(-9.3px, 4.1px, 0);
+  }
+
+  /* line 192, ../../../../client/sass/140630/ipod.scss */
+  35% {
+    opacity: 1;
+    -webkit-transform: translate3d(-6.1px, 2.7px, 0);
+  }
+
+  /* line 193, ../../../../client/sass/140630/ipod.scss */
+  40% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 194, ../../../../client/sass/140630/ipod.scss */
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(2.7px, -1.2px, 0);
+  }
+
+  /* line 195, ../../../../client/sass/140630/ipod.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: translate3d(1.7px, -0.8px, 0);
+  }
+
+  /* line 196, ../../../../client/sass/140630/ipod.scss */
+  55% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 197, ../../../../client/sass/140630/ipod.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.8px, 0.3px, 0);
+  }
+
+  /* line 198, ../../../../client/sass/140630/ipod.scss */
+  65% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.5px, 0.2px, 0);
+  }
+
+  /* line 199, ../../../../client/sass/140630/ipod.scss */
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 200, ../../../../client/sass/140630/ipod.scss */
+  75% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.2px, -0.1px, 0);
+  }
+
+  /* line 201, ../../../../client/sass/140630/ipod.scss */
+  80% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.1px, -0.1px, 0);
+  }
+
+  /* line 202, ../../../../client/sass/140630/ipod.scss */
+  85% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 203, ../../../../client/sass/140630/ipod.scss */
+  90% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.1px, 0, 0);
+  }
+
+  /* line 204, ../../../../client/sass/140630/ipod.scss */
+  95% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.1px, 0, 0);
+  }
+
+  /* line 205, ../../../../client/sass/140630/ipod.scss */
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes open-3 {
+  /* line 209, ../../../../client/sass/140630/ipod.scss */
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(225px, -145px, 0);
+  }
+
+  /* line 210, ../../../../client/sass/140630/ipod.scss */
+  25% {
+    opacity: 1;
+    -webkit-transform: translate3d(-11.8px, 4.1px, 0);
+  }
+
+  /* line 211, ../../../../client/sass/140630/ipod.scss */
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(-7.8px, 2.7px, 0);
+  }
+
+  /* line 212, ../../../../client/sass/140630/ipod.scss */
+  35% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 213, ../../../../client/sass/140630/ipod.scss */
+  40% {
+    opacity: 1;
+    -webkit-transform: translate3d(3.4px, -1.2px, 0);
+  }
+
+  /* line 214, ../../../../client/sass/140630/ipod.scss */
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(2.2px, -0.8px, 0);
+  }
+
+  /* line 215, ../../../../client/sass/140630/ipod.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 216, ../../../../client/sass/140630/ipod.scss */
+  55% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.1px, 0.3px, 0);
+  }
+
+  /* line 217, ../../../../client/sass/140630/ipod.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.6px, 0.2px, 0);
+  }
+
+  /* line 218, ../../../../client/sass/140630/ipod.scss */
+  65% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 219, ../../../../client/sass/140630/ipod.scss */
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.2px, -0.1px, 0);
+  }
+
+  /* line 220, ../../../../client/sass/140630/ipod.scss */
+  75% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.2px, -0.1px, 0);
+  }
+
+  /* line 221, ../../../../client/sass/140630/ipod.scss */
+  80% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 222, ../../../../client/sass/140630/ipod.scss */
+  85% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.1px, 0, 0);
+  }
+
+  /* line 223, ../../../../client/sass/140630/ipod.scss */
+  90% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.1px, 0, 0);
+  }
+
+  /* line 224, ../../../../client/sass/140630/ipod.scss */
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes open-4 {
+  /* line 228, ../../../../client/sass/140630/ipod.scss */
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(150px, -145px, 0);
+  }
+
+  /* line 229, ../../../../client/sass/140630/ipod.scss */
+  25% {
+    opacity: 1;
+    -webkit-transform: translate3d(-3.3px, 4.1px, 0);
+  }
+
+  /* line 230, ../../../../client/sass/140630/ipod.scss */
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(-2.2px, 2.7px, 0);
+  }
+
+  /* line 231, ../../../../client/sass/140630/ipod.scss */
+  35% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 232, ../../../../client/sass/140630/ipod.scss */
+  40% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.9px, -1.2px, 0);
+  }
+
+  /* line 233, ../../../../client/sass/140630/ipod.scss */
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.6px, -0.8px, 0);
+  }
+
+  /* line 234, ../../../../client/sass/140630/ipod.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 235, ../../../../client/sass/140630/ipod.scss */
+  55% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.3px, 0.3px, 0);
+  }
+
+  /* line 236, ../../../../client/sass/140630/ipod.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.2px, 0.2px, 0);
+  }
+
+  /* line 237, ../../../../client/sass/140630/ipod.scss */
+  65% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 238, ../../../../client/sass/140630/ipod.scss */
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.1px, -0.1px, 0);
+  }
+
+  /* line 239, ../../../../client/sass/140630/ipod.scss */
+  75% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 240, ../../../../client/sass/140630/ipod.scss */
+  80% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 241, ../../../../client/sass/140630/ipod.scss */
+  85% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 242, ../../../../client/sass/140630/ipod.scss */
+  90% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 243, ../../../../client/sass/140630/ipod.scss */
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes open-5 {
+  /* line 247, ../../../../client/sass/140630/ipod.scss */
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50px, -145px, 0);
+  }
+
+  /* line 248, ../../../../client/sass/140630/ipod.scss */
+  25% {
+    opacity: 1;
+    -webkit-transform: translate3d(3.6px, 4.1px, 0);
+  }
+
+  /* line 249, ../../../../client/sass/140630/ipod.scss */
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(2.4px, 2.7px, 0);
+  }
+
+  /* line 250, ../../../../client/sass/140630/ipod.scss */
+  35% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 251, ../../../../client/sass/140630/ipod.scss */
+  40% {
+    opacity: 1;
+    -webkit-transform: translate3d(-1px, -1.2px, 0);
+  }
+
+  /* line 252, ../../../../client/sass/140630/ipod.scss */
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.7px, -0.8px, 0);
+  }
+
+  /* line 253, ../../../../client/sass/140630/ipod.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 254, ../../../../client/sass/140630/ipod.scss */
+  55% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.3px, 0.3px, 0);
+  }
+
+  /* line 255, ../../../../client/sass/140630/ipod.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.2px, 0.2px, 0);
+  }
+
+  /* line 256, ../../../../client/sass/140630/ipod.scss */
+  65% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 257, ../../../../client/sass/140630/ipod.scss */
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 258, ../../../../client/sass/140630/ipod.scss */
+  75% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 259, ../../../../client/sass/140630/ipod.scss */
+  80% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 260, ../../../../client/sass/140630/ipod.scss */
+  85% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 261, ../../../../client/sass/140630/ipod.scss */
+  90% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 262, ../../../../client/sass/140630/ipod.scss */
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes open-6 {
+  /* line 266, ../../../../client/sass/140630/ipod.scss */
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-235px, -145px, 0);
+  }
+
+  /* line 267, ../../../../client/sass/140630/ipod.scss */
+  25% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 268, ../../../../client/sass/140630/ipod.scss */
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(9.3px, 4.1px, 0);
+  }
+
+  /* line 269, ../../../../client/sass/140630/ipod.scss */
+  35% {
+    opacity: 1;
+    -webkit-transform: translate3d(6.1px, 2.7px, 0);
+  }
+
+  /* line 270, ../../../../client/sass/140630/ipod.scss */
+  40% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 271, ../../../../client/sass/140630/ipod.scss */
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(-2.7px, -1.2px, 0);
+  }
+
+  /* line 272, ../../../../client/sass/140630/ipod.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: translate3d(-1.7px, -0.8px, 0);
+  }
+
+  /* line 273, ../../../../client/sass/140630/ipod.scss */
+  55% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 274, ../../../../client/sass/140630/ipod.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.8px, 0.3px, 0);
+  }
+
+  /* line 275, ../../../../client/sass/140630/ipod.scss */
+  65% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.5px, 0.2px, 0);
+  }
+
+  /* line 276, ../../../../client/sass/140630/ipod.scss */
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 277, ../../../../client/sass/140630/ipod.scss */
+  75% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.2px, -0.1px, 0);
+  }
+
+  /* line 278, ../../../../client/sass/140630/ipod.scss */
+  80% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.1px, -0.1px, 0);
+  }
+
+  /* line 279, ../../../../client/sass/140630/ipod.scss */
+  85% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 280, ../../../../client/sass/140630/ipod.scss */
+  90% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.1px, 0, 0);
+  }
+
+  /* line 281, ../../../../client/sass/140630/ipod.scss */
+  95% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.1px, 0, 0);
+  }
+
+  /* line 282, ../../../../client/sass/140630/ipod.scss */
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes open-7 {
+  /* line 286, ../../../../client/sass/140630/ipod.scss */
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-210px, -145px, 0);
+  }
+
+  /* line 287, ../../../../client/sass/140630/ipod.scss */
+  25% {
+    opacity: 1;
+    -webkit-transform: translate3d(15.6px, 4.1px, 0);
+  }
+
+  /* line 288, ../../../../client/sass/140630/ipod.scss */
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(10.3px, 2.7px, 0);
+  }
+
+  /* line 289, ../../../../client/sass/140630/ipod.scss */
+  35% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 290, ../../../../client/sass/140630/ipod.scss */
+  40% {
+    opacity: 1;
+    -webkit-transform: translate3d(-4.5px, -1.2px, 0);
+  }
+
+  /* line 291, ../../../../client/sass/140630/ipod.scss */
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(-2.9px, -0.8px, 0);
+  }
+
+  /* line 292, ../../../../client/sass/140630/ipod.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 293, ../../../../client/sass/140630/ipod.scss */
+  55% {
+    opacity: 1;
+    -webkit-transform: translate3d(1.3px, 0.3px, 0);
+  }
+
+  /* line 294, ../../../../client/sass/140630/ipod.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.8px, 0.2px, 0);
+  }
+
+  /* line 295, ../../../../client/sass/140630/ipod.scss */
+  65% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 296, ../../../../client/sass/140630/ipod.scss */
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.4px, -0.1px, 0);
+  }
+
+  /* line 297, ../../../../client/sass/140630/ipod.scss */
+  75% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.2px, -0.1px, 0);
+  }
+
+  /* line 298, ../../../../client/sass/140630/ipod.scss */
+  80% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 299, ../../../../client/sass/140630/ipod.scss */
+  85% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.1px, 0, 0);
+  }
+
+  /* line 300, ../../../../client/sass/140630/ipod.scss */
+  90% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.1px, 0, 0);
+  }
+
+  /* line 301, ../../../../client/sass/140630/ipod.scss */
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes open-8 {
+  /* line 305, ../../../../client/sass/140630/ipod.scss */
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-400px, -145px, 0);
+  }
+
+  /* line 306, ../../../../client/sass/140630/ipod.scss */
+  25% {
+    opacity: 1;
+    -webkit-transform: translate3d(22.2px, 4.1px, 0);
+  }
+
+  /* line 307, ../../../../client/sass/140630/ipod.scss */
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(14.6px, 2.7px, 0);
+  }
+
+  /* line 308, ../../../../client/sass/140630/ipod.scss */
+  35% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 309, ../../../../client/sass/140630/ipod.scss */
+  40% {
+    opacity: 1;
+    -webkit-transform: translate3d(-6.4px, -1.2px, 0);
+  }
+
+  /* line 310, ../../../../client/sass/140630/ipod.scss */
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(-4.2px, -0.8px, 0);
+  }
+
+  /* line 311, ../../../../client/sass/140630/ipod.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 312, ../../../../client/sass/140630/ipod.scss */
+  55% {
+    opacity: 1;
+    -webkit-transform: translate3d(1.8px, 0.3px, 0);
+  }
+
+  /* line 313, ../../../../client/sass/140630/ipod.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(1.2px, 0.2px, 0);
+  }
+
+  /* line 314, ../../../../client/sass/140630/ipod.scss */
+  65% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 315, ../../../../client/sass/140630/ipod.scss */
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.5px, -0.1px, 0);
+  }
+
+  /* line 316, ../../../../client/sass/140630/ipod.scss */
+  75% {
+    opacity: 1;
+    -webkit-transform: translate3d(-0.3px, 0, 0);
+  }
+
+  /* line 317, ../../../../client/sass/140630/ipod.scss */
+  80% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 318, ../../../../client/sass/140630/ipod.scss */
+  85% {
+    opacity: 1;
+    -webkit-transform: translate3d(0.2px, 0, 0);
+  }
+
+  /* line 319, ../../../../client/sass/140630/ipod.scss */
+  90% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 320, ../../../../client/sass/140630/ipod.scss */
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}

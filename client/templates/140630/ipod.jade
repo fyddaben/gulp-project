@@ -1,0 +1,29 @@
+//- 仿照地址http://www.apple.com/ipod/
+//- 做一个图片动态效果
+extends ../_common/layout 
+
+block title
+	title
+		| ipod animate
+block stylesheet
+	link(rel="stylesheet",href="http://ben.mi.com/assets/temp/140630/ipod.css")
+block content
+	.main
+		ul.piclist.J_piclist
+			li
+				img(src="http://images.apple.com/ipod/home/images/productbrowser/ipodshuffle_2x.jpg")
+			li
+				img(src="http://images.apple.com/ipod/home/images/productbrowser/ipodnano_2x.jpg")					
+			li
+				img(src="http://images.apple.com/ipod/home/images/productbrowser/ipodtouch_2x.jpg")					
+			li
+				img(src="http://images.apple.com/ipod/home/images/productbrowser/ipodclassic_2x.jpg")					
+			li
+				img(src="http://images.apple.com/ipod/home/images/productbrowser/appletv_2x.jpg")					
+			li
+				img(src="http://images.apple.com/ipod/home/images/productbrowser/accessories_2x.jpg")					
+		.control-btn.J_btn
+			|out
+	script(src="http://ben.mi.com/js/util/jquery.js")
+	script(src="http://ben.mi.com/js/util/browserdetect.js")						
+	script(src="http://ben.mi.com/js/140630/ipod.js")
